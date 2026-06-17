@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f8f6f3;
+  --ink: #111111;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Huge editorial type scale. Tight, uppercase, brutalist. */
+.statement {
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+  font-size: clamp(3.4rem, 13vw, 13rem);
+}
+
+.statement--compact {
+  font-size: clamp(2.6rem, 9.5vw, 9rem);
+}
+
+.label {
+  font-size: clamp(0.62rem, 0.9vw, 0.82rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Thin custom scrollbar to keep the editorial feel */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+::-webkit-scrollbar-thumb {
+  background: #d9d3cb;
+  border-radius: 99px;
+}
+
+::selection {
+  background: #111111;
+  color: #f8f6f3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
