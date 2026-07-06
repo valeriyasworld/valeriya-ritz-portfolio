@@ -75,6 +75,30 @@ export default function ImageTrail({
             />
           ))}
         </AnimatePresence>
+
+        {/* mobile: no cursor, so a handful of photos pop in around the sign
+            as the section scrolls into view */}
+        <div className="md:hidden">
+          {MOBILE_SPOTS.map((spot, i) => (
+            <motion.img
+              key={i}
+              src={trailImages[i % trailImages.length]}
+              alt=""
+              aria-hidden
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-15%" }}
+              transition={{
+                type: "spring",
+                stiffness: 240,
+                damping: 16,
+                delay: 0.2 + i * 0.18,
+              }}
+              className="absolute w-20 object-cover"
+              style={{ ...spot, aspectRatio: "10 / 13" }}
+            />
+          ))}
+        </div>
       </div>
 
       {/* actual section content above the trail */}
@@ -82,3 +106,12 @@ export default function ImageTrail({
     </div>
   );
 }
+
+/* scattered spots around the sign — deliberately few, so it stays calm */
+const MOBILE_SPOTS: React.CSSProperties[] = [
+  { top: "4%", left: "6%" },
+  { top: "10%", right: "8%" },
+  { top: "46%", left: "4%" },
+  { top: "58%", right: "5%" },
+  { bottom: "14%", left: "14%" },
+];
