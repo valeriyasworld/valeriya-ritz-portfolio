@@ -50,7 +50,7 @@ function FadingToken({
 
   if (token.kind === "image") {
     const cls =
-      "mx-[0.18em] inline-block h-[0.82em] w-auto -translate-y-[0.06em] rounded-[3px] object-cover align-baseline";
+      "mx-[0.18em] inline-block aspect-square h-[0.82em] w-auto -translate-y-[0.06em] object-cover align-baseline";
     // .mp4 slots become tiny muted video loops — a film living inside the word "film"
     if (token.src.endsWith(".mp4")) {
       return (
