@@ -142,15 +142,23 @@ export const about = {
 
 /* --------------------------------------------------------------- SKILLS -- */
 
-// Slow marquee under About — tools first, more can be added anytime.
+// Two marquees under About: hard skills glide left, soft skills glide
+// right at the same speed — direction tells them apart.
 export const skillsLabel = "( Soft & Hard Skills )";
-export const skills = [
+export const hardSkills = [
   "Figma",
   "DaVinci Resolve",
   "Adobe Ai",
   "Adobe Ps",
   "Adobe InD",
   "Adobe Pr",
+];
+export const softSkills = [
+  "Empathy & Self-Reflection",
+  "Curiosity",
+  "Intercultural Awareness",
+  "Problem-Solving",
+  "Accountability",
 ];
 
 /* ------------------------------------------------------------- MANIFEST -- */
