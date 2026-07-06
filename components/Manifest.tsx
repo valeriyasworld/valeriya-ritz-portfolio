@@ -32,7 +32,7 @@ export default function Manifest() {
   };
 
   return (
-    <section id="manifest" className="bg-black py-32 text-white md:py-44">
+    <section id="manifest" className="bg-black py-20 text-white md:py-28">
       {/* slides */}
       <div
         ref={trackRef}
@@ -42,7 +42,7 @@ export default function Manifest() {
         {manifest.map((statement, i) => (
           <div
             key={i}
-            className="relative flex min-h-[48vh] w-[86vw] shrink-0 snap-center flex-col justify-center px-5 md:w-[72vw] md:px-16"
+            className="relative flex min-h-[30vh] w-[86vw] shrink-0 snap-center flex-col justify-center px-5 md:w-[72vw] md:px-16"
           >
             {/* counter pinned to the top so every statement centers on the
                 same axis regardless of its line count */}
@@ -59,7 +59,7 @@ export default function Manifest() {
       </div>
 
       {/* controls */}
-      <div className="mt-16 flex items-center justify-between px-5 md:mt-24 md:px-10">
+      <div className="mt-10 flex items-center justify-between px-5 md:mt-12 md:px-10">
         <span className="micro text-white/40">
           drag / scroll <span aria-hidden>→</span>
         </span>
