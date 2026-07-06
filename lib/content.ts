@@ -50,8 +50,12 @@ export const intro = {
    */
   statement:
     "Hey, I'm Valeriya. [1] A media designer working across digital design, visual systems and *film,* [2] connected by one question: What should this make people *feel?* [3]",
-  // >>> drop photos into /public/media/intro/ as intro-1/2/3.jpg
-  inlineImages: [] as string[],
+  // .mp4 entries render as tiny muted video loops inside the text
+  inlineImages: [
+    "/media/intro/intro-1.jpg",
+    "/media/intro/intro-2.mp4",
+    "/media/intro/intro-3.jpg",
+  ] as string[],
 };
 
 /* -------------------------------------------------------------- CONTEXT -- */
