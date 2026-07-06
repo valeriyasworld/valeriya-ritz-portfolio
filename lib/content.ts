@@ -243,6 +243,8 @@ export const trailImages = [
   "/media/trail/trail-3.webp",
   "/media/trail/trail-4.webp",
   "/media/trail/trail-5.webp",
+  "/media/trail/trail-6.webp",
+  "/media/trail/trail-7.webp",
 ];
 
 export const contact = {
