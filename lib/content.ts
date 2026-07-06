@@ -1,0 +1,224 @@
+/**
+ * ============================================================================
+ * CENTRAL CONTENT FILE — every word and every media path on the site lives
+ * here. Edit copy, swap placeholders, reorder projects: all in one place.
+ *
+ * MEDIA PLACEHOLDERS:
+ * All images currently come from picsum.photos (grayscale, seeded). To use
+ * real assets, drop files into /public/media/ and change the `src` values to
+ * e.g. "/media/beehelp-cover.jpg". Components never hard-code URLs.
+ * ============================================================================
+ */
+
+/** Grayscale seeded placeholder. >>> REPLACE ME with "/media/your-file.jpg" */
+export function placeholder(seed: string, w = 1200, h = 800): string {
+  return `https://picsum.photos/seed/${encodeURIComponent(seed)}/${w}/${h}?grayscale`;
+}
+
+/* ------------------------------------------------------------------ NAV -- */
+
+export const nav = [
+  { label: "Showreel", href: "#showreel" },
+  { label: "Context", href: "#context" },
+  { label: "Manifest", href: "#manifest" },
+  { label: "Work", href: "#work" },
+  { label: "Contact", href: "#contact" },
+];
+
+/* ------------------------------------------------------------- SHOWREEL -- */
+
+export const showreel = {
+  /**
+   * >>> REPLACE ME: drop your showreel into /public/media/showreel.mp4
+   * (and optionally a poster frame as /public/media/showreel-poster.jpg).
+   * As long as this is `null`, the site renders a designed placeholder.
+   */
+  videoSrc: null as string | null, // e.g. "/media/showreel.mp4"
+  posterSrc: null as string | null, // e.g. "/media/showreel-poster.jpg"
+  edition: "Portfolio 2026",
+  roleLine: "Digital design → creative direction & film",
+};
+
+/* ---------------------------------------------------------------- INTRO -- */
+
+export const intro = {
+  // The big two-line positioning statement. *asterisks* mark serif-italic words.
+  statementA: "I design *systems.*",
+  statementB: "I direct *stories.*",
+  sub: "Digital products, visual systems, motion and films — connected by one question: what should this make people feel?",
+  tagline:
+    "A portfolio of digital products, visual systems, motion, films and small personal contradictions.",
+};
+
+/* -------------------------------------------------------------- CONTEXT -- */
+
+export const about = {
+  heading: "How I got *here*",
+  personal: [
+    "I'm Valeriya — a designer from Ukraine, currently thinking, making and slightly overthinking in Germany.",
+    "Systems, stories, interfaces, films — I like when things start talking to each other. Three years in an agency made me fast and versatile. University made me structured. Filmmaking made me honest. Now I'm putting all of it in one room and letting it argue.",
+  ],
+  currently:
+    "Currently moving from digital design into creative direction and filmmaking.",
+  timeline: [
+    {
+      period: "3 years",
+      title: "Agency",
+      what: "Digital design, brand, motion, campaigns, websites, real client work.",
+      changed:
+        "It made me an allrounder — and taught me how design survives contact with reality: deadlines, feedback, budgets, people.",
+    },
+    {
+      period: "B.A.",
+      title: "DHBW Media Design",
+      what: "Digital products, interaction design, visual systems, experimentation.",
+      changed:
+        "It gave my range a spine. I stopped just making things and started building systems that could carry ideas.",
+    },
+    {
+      period: "Bachelor project",
+      title: "Filmmaking",
+      what: "Moving image, cinematic storytelling, identity, emotion.",
+      changed:
+        "It showed me what I had been designing all along: not screens — feelings. The camera just made it obvious.",
+    },
+    {
+      period: "Next",
+      title: "Master Creative Direction",
+      what: "Direction, concept, narrative, visual strategy.",
+      changed:
+        "Where everything converges. Systems and stories, strategy and intuition — finally in one job description.",
+    },
+  ],
+  // The contradictions block — left word in bold sans, right side in serif italic.
+  contradictions: [
+    { a: "serious", b: "but not about myself" },
+    { a: "strategic", b: "but intuitive" },
+    { a: "structured", b: "but emotional" },
+    { a: "digital", b: "but moving into film" },
+  ],
+  quote: "I take design seriously. Not myself.",
+};
+
+/* ------------------------------------------------------------- MANIFEST -- */
+
+// *asterisks* mark serif-italic words inside each statement.
+export const manifest = [
+  "I don't want to make things look better. I want to make them *matter.*",
+  "Good design is not decoration. It is *direction.*",
+  "I believe in systems. But not in *soulless* ones.",
+  "A project should have a *reason* to exist.",
+  "Emotion is not the opposite of *strategy.*",
+  "I care about pixels. And about the *feeling* they leave behind.",
+  "I like structure. Until it limits *curiosity.*",
+  "I take design seriously. *Not myself.*",
+];
+
+/* ----------------------------------------------------------------- WORK -- */
+
+export type Project = {
+  id: string;
+  title: string;
+  category: string;
+  year: string;
+  description: string;
+  /** >>> REPLACE ME: swap for "/media/<project>.jpg" once real assets exist */
+  image: string;
+  /** Later this can point to a detail page, e.g. "/work/beehelp" */
+  href: string;
+};
+
+export const projects: Project[] = [
+  {
+    id: "beehelp",
+    title: "BeeHelp",
+    category: "Digital Product / Interaction Design",
+    year: "2024",
+    description:
+      "A neighborhood help app with a playful visual language and social purpose.",
+    image: placeholder("beehelp"),
+    href: "#work", // >>> later: "/work/beehelp"
+  },
+  {
+    id: "femira",
+    title: "Femira",
+    category: "Brand / Digital / Campaign",
+    year: "2024",
+    description:
+      "A sensitive and strategic design project around women's health and communication.",
+    image: placeholder("femira"),
+    href: "#work",
+  },
+  {
+    id: "human",
+    title: "You Know That You're a Human?",
+    category: "Poetic Short Film / Visual Essay",
+    year: "2025",
+    description:
+      "A small cinematic piece based on poetry, humanity and the feeling of being seen.",
+    image: placeholder("human-film"),
+    href: "#work",
+  },
+  {
+    id: "kerasilk",
+    title: "Kerasilk",
+    category: "Website Redesign / Digital Design",
+    year: "2024",
+    description:
+      "Website redesign focused on digital experience, structure and visual refinement.",
+    image: placeholder("kerasilk"),
+    href: "#work",
+  },
+  {
+    id: "morphosis",
+    title: "Morphosis",
+    category: "Design System / Werkschau",
+    year: "2025",
+    description:
+      "A visual system for a design exhibition, built around transformation and identity.",
+    image: placeholder("morphosis"),
+    href: "#work",
+  },
+  {
+    id: "jardin",
+    title: "Jardin de la Crimée",
+    category: "Concept Website / Personal Project",
+    year: "2025",
+    description:
+      "A fictional website for a Crimean winery. A personal promise: if Crimea returns to Ukraine, I will design a real website for a winery there — for free.",
+    image: placeholder("jardin-crimee"),
+    href: "#work",
+  },
+  {
+    id: "next-stop",
+    title: "Next Stop",
+    category: "Short Film / Experimental Video",
+    year: "2025",
+    description:
+      "A film about metro systems in Ukraine and Germany, with a drone-like, observational aesthetic.",
+    image: placeholder("next-stop"),
+    href: "#work",
+  },
+];
+
+/* -------------------------------------------------------------- CONTACT -- */
+
+export const contact = {
+  signLines: ["This is", "your sign"],
+  sub: ["To say hi.", "To finally start that project.", "Or whatever you needed a sign for. <3"],
+  email: "valeriyaritz@gmail.com",
+  linkedin: {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/", // >>> REPLACE ME with your LinkedIn profile URL
+  },
+  instagram: {
+    label: "Instagram",
+    href: "https://instagram.com/valeriyaritz", // >>> check this is your handle
+  },
+  phones: [
+    { label: "+49 179 461 97 65", href: "tel:+491794619765" },
+    { label: "+380 99 364 06 81", href: "tel:+380993640681" },
+  ],
+  location: "Germany / available remote",
+  footerLine: "Serious about design. Not about herself.",
+};

@@ -2,61 +2,200 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   FONTS — Nyght Serif (headlines) + Aeonik (body)
+   --------------------------------------------------------------------------
+   >>> REPLACE ME: drop your font files into  /public/fonts/  with exactly
+   these names (or adjust the src paths below):
+
+     /public/fonts/NyghtSerif-Light.woff2
+     /public/fonts/NyghtSerif-LightItalic.woff2
+     /public/fonts/NyghtSerif-Medium.woff2
+     /public/fonts/NyghtSerif-MediumItalic.woff2
+     /public/fonts/Aeonik-Regular.woff2
+     /public/fonts/Aeonik-Medium.woff2
+     /public/fonts/Aeonik-Bold.woff2
+
+   Until the files exist, the site falls back to Instrument Serif (headlines)
+   and Inter Tight (body), loaded in app/layout.tsx — so nothing breaks.
+   ========================================================================== */
+
+@font-face {
+  font-family: "Nyght";
+  src: url("/fonts/NyghtSerif-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nyght";
+  src: url("/fonts/NyghtSerif-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nyght";
+  src: url("/fonts/NyghtSerif-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nyght";
+  src: url("/fonts/NyghtSerif-MediumItalic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url("/fonts/Aeonik-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url("/fonts/Aeonik-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik";
+  src: url("/fonts/Aeonik-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================ TOKENS ==== */
+
 :root {
-  --paper: #f8f6f3;
-  --ink: #111111;
+  --white: #ffffff;
+  --black: #0a0a0a;
+  --grey: #757575;
+  --line: rgba(10, 10, 10, 0.14);
+
+  /* Nyght first, then the Google-font fallbacks set in layout.tsx */
+  --font-display: "Nyght", var(--font-display-fallback), Georgia, serif;
+  --font-body: "Aeonik", var(--font-body-fallback), "Helvetica Neue",
+    Helvetica, Arial, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  /* keep anchor targets clear of the fixed nav */
+  scroll-padding-top: 4rem;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 body {
-  background-color: var(--paper);
-  color: var(--ink);
+  background-color: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
   overflow-x: hidden;
 }
 
-/* Huge editorial type scale. Tight, uppercase, brutalist. */
+/* ======================================================= TYPE SCALE ==== */
+
+/* Big editorial statements — bold sans, tight, uppercase */
 .statement {
-  font-weight: 800;
+  font-family: var(--font-body);
+  font-weight: 700;
   text-transform: uppercase;
-  line-height: 0.86;
-  letter-spacing: -0.045em;
-  font-size: clamp(3.4rem, 13vw, 13rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  font-size: clamp(2.6rem, 8.5vw, 8.5rem);
 }
 
-.statement--compact {
-  font-size: clamp(2.6rem, 9.5vw, 9rem);
+/* Serif accent inside statements — the "contradiction" voice */
+.statement .serif,
+.serif {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: -0.01em;
 }
 
-.label {
-  font-size: clamp(0.62rem, 0.9vw, 0.82rem);
-  letter-spacing: 0.16em;
+/* Giant contact sign */
+.sign {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.88;
+  letter-spacing: -0.035em;
+  font-size: clamp(3.4rem, 14vw, 15rem);
+}
+
+/* Small uppercase labels / meta */
+.micro {
+  font-family: var(--font-body);
+  font-size: clamp(0.6rem, 0.75vw, 0.75rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-/* Thin custom scrollbar to keep the editorial feel */
+/* ========================================================== DETAILS ==== */
+
+/* Underline-on-hover for inline links */
+.link-line {
+  position: relative;
+}
+.link-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-line:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Hide scrollbars on the manifest slider while keeping it scrollable */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Thin page scrollbar, black & white */
 ::-webkit-scrollbar {
-  width: 9px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--paper);
+  background: var(--white);
 }
 ::-webkit-scrollbar-thumb {
-  background: #d9d3cb;
-  border-radius: 99px;
+  background: #d4d4d4;
 }
 
 ::selection {
-  background: #111111;
-  color: #f8f6f3;
+  background: var(--black);
+  color: var(--white);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -8,15 +8,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#F8F6F3",
-        ink: "#111111",
-        accent: "#9A3B2E", // muted red/brown, used very sparingly
+        // black & white only — a colour accent can be added here later
+        white: "#FFFFFF",
+        black: "#0A0A0A",
+        grey: "#757575",
+        line: "rgba(10,10,10,0.14)",
       },
       fontFamily: {
-        grotesk: ["var(--font-grotesk)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)"],
+        body: ["var(--font-body)"],
       },
-      letterSpacing: {
-        tightest: "-0.045em",
+      transitionTimingFunction: {
+        editorial: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
     },
   },
