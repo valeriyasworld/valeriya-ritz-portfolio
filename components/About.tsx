@@ -21,10 +21,18 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
   const [slide, setSlide] = useState(0);
   const hasMemories = step.memories.length > 0;
 
-  // cycle memory photos every second while hovered
+  // preload the photos once so the flashbacks never show an empty frame
+  useEffect(() => {
+    step.memories.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, [step.memories]);
+
+  // flashback mode: photos cut hard and fast, like remembering
   useEffect(() => {
     if (!hovered || !hasMemories) return;
-    const id = setInterval(() => setSlide((s) => s + 1), 1000);
+    const id = setInterval(() => setSlide((s) => s + 1), 350);
     return () => clearInterval(id);
   }, [hovered, hasMemories]);
 
@@ -37,7 +45,7 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
       }}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="flex items-baseline justify-between gap-4">
+      <div className="relative flex items-baseline justify-between gap-4">
         <h3 className="font-display text-3xl tracking-tight md:text-4xl">
           {step.title}{" "}
           <a
@@ -50,43 +58,37 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
           </a>
         </h3>
         <span className="micro shrink-0 text-grey">{step.period}</span>
+
+        {/* memory flashbacks — top-aligned with the heading, desktop only */}
+        {hasMemories && (
+          <div className="pointer-events-none absolute right-full top-0 z-20 mr-8 hidden w-[13vw] max-w-[220px] lg:block">
+            <AnimatePresence>
+              {hovered && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25, ease: [...EASE] }}
+                  className="relative aspect-[3/4] overflow-hidden bg-black shadow-xl"
+                >
+                  {/* hard cuts, no crossfade — memories flash, they don't fade */}
+                  <img
+                    key={slide % step.memories.length}
+                    src={step.memories[slide % step.memories.length]}
+                    alt={`${step.org.label} — memory`}
+                    className="absolute inset-0 h-full w-full object-cover grayscale"
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        )}
       </div>
       <p className="micro mt-3 text-grey">{step.dates}</p>
       <p className="mt-3 text-sm text-grey md:text-base">{step.what}</p>
       <p className="serif mt-5 text-lg leading-snug md:text-xl">
         {step.changed}
       </p>
-
-      {/* memory slideshow — floats to the left of the entry, desktop only */}
-      {hasMemories && (
-        <div className="pointer-events-none absolute right-full top-1/2 z-20 mr-10 hidden w-[17vw] max-w-[300px] -translate-y-1/2 lg:block">
-          <AnimatePresence>
-            {hovered && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.4, ease: [...EASE] }}
-              >
-                <div className="relative aspect-[3/4] overflow-hidden bg-black shadow-2xl">
-                  <AnimatePresence mode="popLayout">
-                    <motion.img
-                      key={slide % step.memories.length}
-                      src={step.memories[slide % step.memories.length]}
-                      alt={`${step.org.label} — memory`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.35 }}
-                      className="absolute inset-0 h-full w-full object-cover grayscale"
-                    />
-                  </AnimatePresence>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      )}
     </li>
   );
 }
