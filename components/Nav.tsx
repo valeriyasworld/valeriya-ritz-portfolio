@@ -29,11 +29,15 @@ export default function Nav() {
     <>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-50 mix-blend-difference">
         <nav className="flex items-center justify-between px-5 py-5 text-white md:px-10">
-          <a
-            href="#showreel"
-            className="micro pointer-events-auto font-bold tracking-[0.22em]"
-          >
-            Valeriya Ritz
+          {/* handwritten signature logo — inverted (white strokes on black)
+              so the header's mix-blend-difference renders it correctly on
+              both the black showreel and the white sections */}
+          <a href="#showreel" className="pointer-events-auto">
+            <img
+              src="/media/logo.png"
+              alt="Valeriya Ritz"
+              className="h-11 w-auto invert md:h-12"
+            />
           </a>
 
           {/* desktop links */}
