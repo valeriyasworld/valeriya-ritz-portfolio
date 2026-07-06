@@ -29,11 +29,11 @@ export const nav = [
 
 export const showreel = {
   /**
-   * >>> REPLACE ME: drop your showreel into /public/media/showreel.mp4
-   * (and optionally a poster frame as /public/media/showreel-poster.jpg).
-   * As long as this is `null`, the site renders a designed placeholder.
+   * The real showreel. ✓ live
+   * (Optionally add a poster frame as /public/media/showreel-poster.jpg
+   * and set posterSrc to "/media/showreel-poster.jpg".)
    */
-  videoSrc: null as string | null, // e.g. "/media/showreel.mp4"
+  videoSrc: "/media/showreel.mp4" as string | null,
   posterSrc: null as string | null, // e.g. "/media/showreel-poster.jpg"
   edition: "Portfolio 2026",
   roleLine: "Digital design → creative direction & film",
