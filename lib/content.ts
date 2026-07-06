@@ -63,7 +63,7 @@ export const about = {
   timeline: [
     {
       period: "3 semesters",
-      title: "B.A. Medienkonzeption",
+      title: "B.A. Media Conception & Production",
       org: {
         label: "@HFU Furtwangen",
         href: "https://www.hs-furtwangen.de/studium/studiengaenge/medienkonzeption-bachelor",
