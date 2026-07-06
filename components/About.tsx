@@ -118,7 +118,6 @@ export default function About() {
                   {p}
                 </p>
               ))}
-              <p className="micro pt-2 text-grey">{about.currently}</p>
             </Reveal>
           </div>
         </div>
