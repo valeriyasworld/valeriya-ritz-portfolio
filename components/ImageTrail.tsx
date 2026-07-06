@@ -94,7 +94,7 @@ export default function ImageTrail({
                 damping: 16,
                 delay: 0.2 + i * 0.18,
               }}
-              className="absolute w-20 object-cover"
+              className="absolute w-16 object-cover"
               style={{ ...spot, aspectRatio: "10 / 13" }}
             />
           ))}
@@ -107,11 +107,12 @@ export default function ImageTrail({
   );
 }
 
-/* scattered spots around the sign — deliberately few, so it stays calm */
+/* scattered in the dedicated whitespace band ABOVE the sign — the contact
+   section reserves extra top padding on mobile so nothing overlaps text */
 const MOBILE_SPOTS: React.CSSProperties[] = [
-  { top: "4%", left: "6%" },
-  { top: "10%", right: "8%" },
-  { top: "46%", left: "4%" },
-  { top: "58%", right: "5%" },
-  { bottom: "14%", left: "14%" },
+  { top: "0.5%", left: "6%" },
+  { top: "1.8%", right: "8%" },
+  { top: "3.4%", left: "28%" },
+  { top: "5%", right: "24%" },
+  { top: "6.4%", left: "10%" },
 ];
