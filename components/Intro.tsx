@@ -50,7 +50,7 @@ function FadingToken({
 
   if (token.kind === "image") {
     const cls =
-      "relative mx-[0.18em] inline-block aspect-square h-[0.82em] w-auto -translate-y-[0.06em] cursor-pointer object-cover align-baseline";
+      "relative mx-[0.18em] inline-block aspect-square h-[0.82em] w-auto cursor-pointer object-cover align-middle";
     // grows on hover so the tiny picture becomes actually viewable
     const hover = {
       whileHover: { scale: 4, zIndex: 30 },
