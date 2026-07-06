@@ -42,9 +42,11 @@ export default function Manifest() {
         {manifest.map((statement, i) => (
           <div
             key={i}
-            className="flex w-[86vw] shrink-0 snap-center flex-col justify-center px-5 md:w-[72vw] md:px-16"
+            className="relative flex min-h-[48vh] w-[86vw] shrink-0 snap-center flex-col justify-center px-5 md:w-[72vw] md:px-16"
           >
-            <span className="micro mb-8 text-white/40">
+            {/* counter pinned to the top so every statement centers on the
+                same axis regardless of its line count */}
+            <span className="micro absolute left-5 top-0 text-white/40 md:left-16">
               {String(i + 1).padStart(2, "0")} / {String(manifest.length).padStart(2, "0")}
             </span>
             <p className="statement !text-[clamp(1.9rem,5.5vw,5.2rem)] !leading-[1.02]">
