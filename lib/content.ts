@@ -42,9 +42,16 @@ export const showreel = {
 /* ---------------------------------------------------------------- INTRO -- */
 
 export const intro = {
-  // One big Hero-style flowing statement. *asterisks* mark serif-italic words.
+  /**
+   * One big Hero-style flowing statement. *asterisks* mark serif-italic
+   * words. [1] [2] [3] mark inline photo slots — each renders the matching
+   * entry from `inlineImages` as a small picture inside the text flow.
+   * Slots without an image are simply skipped.
+   */
   statement:
-    "Hey, I'm Valeriya. A media designer working across digital design, visual systems and *film,* connected by one question: What should this make people *feel?*",
+    "Hey, I'm Valeriya. [1] A media designer working across digital design, visual systems and *film,* [2] connected by one question: What should this make people *feel?* [3]",
+  // >>> drop photos into /public/media/intro/ as intro-1/2/3.jpg
+  inlineImages: [] as string[],
 };
 
 /* -------------------------------------------------------------- CONTEXT -- */
