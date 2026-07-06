@@ -59,7 +59,7 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
 
       {/* memory slideshow — floats to the left of the entry, desktop only */}
       {hasMemories && (
-        <div className="pointer-events-none absolute right-full top-1/2 z-20 mr-10 hidden w-[22vw] max-w-[360px] -translate-y-1/2 lg:block">
+        <div className="pointer-events-none absolute right-full top-1/2 z-20 mr-10 hidden w-[17vw] max-w-[300px] -translate-y-1/2 lg:block">
           <AnimatePresence>
             {hovered && (
               <motion.div
@@ -68,7 +68,7 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{ duration: 0.4, ease: [...EASE] }}
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-black shadow-2xl">
+                <div className="relative aspect-[3/4] overflow-hidden bg-black shadow-2xl">
                   <AnimatePresence mode="popLayout">
                     <motion.img
                       key={slide % step.memories.length}

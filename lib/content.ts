@@ -73,9 +73,9 @@ export const about = {
       // >>> REPLACE ME: drop real photos into /public/media/memories/ and
       // swap these for e.g. "/media/memories/performance-one-1.jpg"
       memories: [
-        placeholder("performance-one-1", 800, 600),
-        placeholder("performance-one-2", 800, 600),
-        placeholder("performance-one-3", 800, 600),
+        placeholder("performance-one-1", 600, 800),
+        placeholder("performance-one-2", 600, 800),
+        placeholder("performance-one-3", 600, 800),
       ],
     },
     {
@@ -91,9 +91,9 @@ export const about = {
         "It gave my range a spine. I stopped just making things and started building systems that could carry ideas.",
       // >>> REPLACE ME: real DHBW memories, e.g. "/media/memories/dhbw-1.jpg"
       memories: [
-        placeholder("dhbw-1", 800, 600),
-        placeholder("dhbw-2", 800, 600),
-        placeholder("dhbw-3", 800, 600),
+        placeholder("dhbw-1", 600, 800),
+        placeholder("dhbw-2", 600, 800),
+        placeholder("dhbw-3", 600, 800),
       ],
     },
     {
