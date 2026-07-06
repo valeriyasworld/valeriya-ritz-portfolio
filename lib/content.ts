@@ -232,6 +232,21 @@ export const projects: Project[] = [
 
 /* -------------------------------------------------------------- CONTACT -- */
 
+/**
+ * Mouse-trail slideshow in the contact section: images spawn behind the
+ * cursor and dissolve like a trace.
+ * >>> REPLACE ME: drop photos into /public/media/trail/ (any names) and
+ * list them here, e.g. "/media/trail/01.jpg". 6–10 images feel best.
+ */
+export const trailImages = [
+  placeholder("trail-1", 500, 650),
+  placeholder("trail-2", 500, 650),
+  placeholder("trail-3", 500, 650),
+  placeholder("trail-4", 500, 650),
+  placeholder("trail-5", 500, 650),
+  placeholder("trail-6", 500, 650),
+];
+
 export const contact = {
   signLines: ["This is", "your sign"],
   sub: ["To say hi.", "To finally start that project.", "Or whatever you needed a sign for. <3"],

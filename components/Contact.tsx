@@ -8,11 +8,13 @@
  */
 
 import { contact } from "@/lib/content";
+import ImageTrail from "./ImageTrail";
 import { Reveal } from "./ui";
 
 export default function Contact() {
   return (
     <section id="contact" className="bg-white px-5 pb-10 pt-32 md:px-10 md:pt-48">
+      <ImageTrail>
       {/* the sign */}
       <div className="text-center">
         <Reveal>
@@ -79,6 +81,7 @@ export default function Contact() {
           Impressum
         </a>
       </footer>
+      </ImageTrail>
     </section>
   );
 }
