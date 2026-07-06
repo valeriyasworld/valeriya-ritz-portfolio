@@ -84,8 +84,7 @@ export default function Nav() {
               transition={{ duration: 0.5, ease: [...EASE] }}
               className="absolute inset-y-0 right-0 flex w-[82%] max-w-sm flex-col justify-between bg-black px-8 py-6 text-white"
             >
-              <div className="flex items-center justify-between">
-                <span className="micro text-white/50">Menu</span>
+              <div className="flex justify-end">
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
@@ -118,7 +117,7 @@ export default function Nav() {
                 ))}
               </ul>
 
-              <span className="micro text-white/40">Portfolio 2026</span>
+              <span />
             </motion.nav>
           </div>
         )}
