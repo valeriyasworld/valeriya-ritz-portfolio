@@ -19,7 +19,7 @@ export function placeholder(seed: string, w = 1200, h = 800): string {
 
 export const nav = [
   { label: "Showreel", href: "#showreel" },
-  { label: "Context", href: "#context" },
+  { label: "About me", href: "#about" },
   { label: "Manifest", href: "#manifest" },
   { label: "Work", href: "#work" },
   { label: "Contact", href: "#contact" },
@@ -90,14 +90,6 @@ export const about = {
         "Where everything converges. Systems and stories, strategy and intuition — finally in one job description.",
     },
   ],
-  // The contradictions block — left word in bold sans, right side in serif italic.
-  contradictions: [
-    { a: "serious", b: "but not about myself" },
-    { a: "strategic", b: "but intuitive" },
-    { a: "structured", b: "but emotional" },
-    { a: "digital", b: "but moving into film" },
-  ],
-  quote: "I take design seriously. Not myself.",
 };
 
 /* ------------------------------------------------------------- MANIFEST -- */
@@ -213,12 +205,15 @@ export const contact = {
   },
   instagram: {
     label: "Instagram",
-    href: "https://instagram.com/valeriyaritz", // >>> check this is your handle
+    href: "https://instagram.com/valeriyacreates",
+  },
+  telegram: {
+    label: "Telegram",
+    href: "#", // >>> REPLACE ME: Valeriya sends the Telegram link later
   },
   phones: [
     { label: "+49 179 461 97 65", href: "tel:+491794619765" },
     { label: "+380 99 364 06 81", href: "tel:+380993640681" },
   ],
   location: "Germany / available remote",
-  footerLine: "Serious about design. Not about herself.",
 };

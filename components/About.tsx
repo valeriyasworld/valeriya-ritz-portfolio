@@ -1,9 +1,9 @@
 "use client";
 
 /**
- * 03 — ABOUT / CONTEXT
+ * 03 — ABOUT ME
  * Not a CV. A narrative: how each step changed the way of thinking.
- * Sticky heading left, story + timeline right, contradictions at the end.
+ * Sticky heading left, story + timeline right.
  */
 
 import { about } from "@/lib/content";
@@ -11,7 +11,7 @@ import { Em, Reveal } from "./ui";
 
 export default function About() {
   return (
-    <section id="context" className="bg-white px-5 pb-32 md:px-10 md:pb-48">
+    <section id="about" className="bg-white px-5 pb-32 md:px-10 md:pb-48">
       <div className="grid gap-12 md:grid-cols-12">
         {/* sticky narrative heading */}
         <div className="md:col-span-5">
@@ -59,33 +59,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* contradictions block */}
-      <div className="mt-24 md:mt-32">
-        <Reveal>
-          <span className="micro text-grey">Small personal contradictions</span>
-        </Reveal>
-        <div className="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
-          {about.contradictions.map((c, i) => (
-            <Reveal key={c.a} delay={i * 0.08}>
-              {/* hover: the rational word steps back, the honest one steps in */}
-              <p className="group cursor-default text-3xl leading-tight md:text-4xl">
-                <span className="font-display tracking-tight transition-opacity duration-300 group-hover:opacity-30">
-                  {c.a}
-                </span>
-                <br />
-                <span className="serif text-grey transition-colors duration-300 group-hover:text-black">
-                  {c.b}
-                </span>
-              </p>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal className="mt-20 md:mt-28">
-          <p className="serif mx-auto max-w-3xl text-center text-3xl leading-tight md:text-5xl">
-            &ldquo;{about.quote}&rdquo;
-          </p>
-        </Reveal>
-      </div>
     </section>
   );
 }
