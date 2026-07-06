@@ -82,9 +82,6 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
                     />
                   </AnimatePresence>
                 </div>
-                <span className="micro mt-3 block text-grey">
-                  ( memories &hearts; )
-                </span>
               </motion.div>
             )}
           </AnimatePresence>
