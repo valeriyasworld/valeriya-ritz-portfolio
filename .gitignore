@@ -14,3 +14,4 @@ next-env.d.ts
 # original video source files (converted mp4 is committed instead)
 public/media/*.MOV
 public/media/*.mov
+tsconfig.tsbuildinfo
