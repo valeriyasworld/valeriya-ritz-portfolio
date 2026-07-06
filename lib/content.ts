@@ -69,6 +69,14 @@ export const about = {
       what: "Digital design, brand, social, campaigns, websites, real client work.",
       changed:
         "Working at agency made me an allrounder — and taught me how design survives contact with reality: deadlines, feedback, budgets, people.",
+      // Hover slideshow with memories from this place — cycles every second.
+      // >>> REPLACE ME: drop real photos into /public/media/memories/ and
+      // swap these for e.g. "/media/memories/performance-one-1.jpg"
+      memories: [
+        placeholder("performance-one-1", 800, 600),
+        placeholder("performance-one-2", 800, 600),
+        placeholder("performance-one-3", 800, 600),
+      ],
     },
     {
       period: "3 years",
@@ -81,6 +89,12 @@ export const about = {
       what: "Digital products, interaction design, visual systems, experimentation.",
       changed:
         "It gave my range a spine. I stopped just making things and started building systems that could carry ideas.",
+      // >>> REPLACE ME: real DHBW memories, e.g. "/media/memories/dhbw-1.jpg"
+      memories: [
+        placeholder("dhbw-1", 800, 600),
+        placeholder("dhbw-2", 800, 600),
+        placeholder("dhbw-3", 800, 600),
+      ],
     },
     {
       period: "1,5 years",
@@ -93,6 +107,8 @@ export const about = {
       what: "Direction, concept, narrative, visual strategy.",
       changed:
         "Where everything converges. Systems and stories, strategy and intuition — finally in one job description.",
+      // no memories yet — the future hasn't happened :)
+      memories: [] as string[],
     },
   ],
 };
