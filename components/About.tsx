@@ -71,13 +71,20 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
                   transition={{ duration: 0.25, ease: [...EASE] }}
                   className="relative aspect-[3/4] overflow-hidden bg-black shadow-xl"
                 >
-                  {/* hard cuts, no crossfade — memories flash, they don't fade */}
-                  <img
-                    key={slide % step.memories.length}
-                    src={step.memories[slide % step.memories.length]}
-                    alt={`${step.org.label} — memory`}
-                    className="absolute inset-0 h-full w-full object-cover grayscale"
-                  />
+                  {/* modern recap flashbacks: the outgoing photo collapses
+                      into the center while the next one settles in behind it */}
+                  <AnimatePresence mode="popLayout">
+                    <motion.img
+                      key={slide % step.memories.length}
+                      src={step.memories[slide % step.memories.length]}
+                      alt={`${step.org.label} — memory`}
+                      initial={{ scale: 1.14 }}
+                      animate={{ scale: 1, zIndex: 1 }}
+                      exit={{ scale: 0.4, opacity: 0, zIndex: 2 }}
+                      transition={{ duration: 0.3, ease: [...EASE] }}
+                      className="absolute inset-0 h-full w-full object-cover grayscale"
+                    />
+                  </AnimatePresence>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -86,7 +93,7 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
       </div>
       <p className="micro mt-3 text-grey">{step.dates}</p>
       <p className="mt-3 text-sm text-grey md:text-base">{step.what}</p>
-      <p className="serif mt-5 text-lg leading-snug md:text-xl">
+      <p className="font-display mt-5 text-lg leading-snug md:text-xl">
         {step.changed}
       </p>
     </li>
