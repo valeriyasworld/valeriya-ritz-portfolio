@@ -150,6 +150,8 @@ export type Project = {
   description: string;
   /** >>> REPLACE ME: swap for "/media/<project>.jpg" once real assets exist */
   image: string;
+  /** Optional: a video preview (muted loop) used instead of the image */
+  video?: string;
   /** Later this can point to a detail page, e.g. "/work/beehelp" */
   href: string;
 };
@@ -183,6 +185,7 @@ export const projects: Project[] = [
     description:
       "A small cinematic piece based on poetry, humanity and the feeling of being seen.",
     image: placeholder("human-film"),
+    video: "/media/showreel.mp4",
     href: "#work",
   },
   {

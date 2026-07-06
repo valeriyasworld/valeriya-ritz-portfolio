@@ -90,16 +90,32 @@ export default function Work() {
                 transition={{ duration: 0.6, ease: [...EASE] }}
                 className="relative aspect-[16/10] overflow-hidden bg-black shadow-2xl">
                 <AnimatePresence mode="popLayout">
-                  <motion.img
-                    key={projects[active].id}
-                    src={projects[active].image}
-                    alt={`${projects[active].title} — preview`}
-                    initial={{ opacity: 0, scale: 1.06 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4, ease: [...EASE] }}
-                    className="absolute inset-0 h-full w-full object-cover grayscale"
-                  />
+                  {projects[active].video ? (
+                    <motion.video
+                      key={projects[active].id}
+                      src={projects[active].video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      initial={{ opacity: 0, scale: 1.06 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [...EASE] }}
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                  ) : (
+                    <motion.img
+                      key={projects[active].id}
+                      src={projects[active].image}
+                      alt={`${projects[active].title} — preview`}
+                      initial={{ opacity: 0, scale: 1.06 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [...EASE] }}
+                      className="absolute inset-0 h-full w-full object-cover grayscale"
+                    />
+                  )}
                 </AnimatePresence>
               </motion.div>
             </div>
@@ -113,12 +129,23 @@ export default function Work() {
           <Reveal key={p.id}>
             <a href={p.href} className="block">
               <div className="relative aspect-[4/3] overflow-hidden bg-black">
-                <img
-                  src={p.image}
-                  alt={`${p.title} — preview`}
-                  loading="lazy"
-                  className="h-full w-full object-cover grayscale"
-                />
+                {p.video ? (
+                  <video
+                    src={p.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="h-full w-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={p.image}
+                    alt={`${p.title} — preview`}
+                    loading="lazy"
+                    className="h-full w-full object-cover grayscale"
+                  />
+                )}
               </div>
               <div className="mt-4 flex items-baseline justify-between gap-4">
                 <h3 className="font-display text-3xl leading-none tracking-tight">
