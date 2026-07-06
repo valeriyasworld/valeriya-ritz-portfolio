@@ -1,11 +1,9 @@
-MEDIA — drop your real images & videos here.
+MEDIA — hier kommen deine echten Bilder & Videos rein.
+Einfach ablegen und Claude Bescheid sagen — er verdrahtet alles im Code.
 
-Showreel:
-  showreel.mp4          -> your showreel video
-  showreel-poster.jpg   -> optional poster frame
-  Then set videoSrc/posterSrc in lib/content.ts (showreel section).
+showreel.mp4            -> dein Showreel (+ optional showreel-poster.jpg)
 
-Projects (any names work — update the `image` paths in lib/content.ts):
+/projects/              -> Projektbilder fuer die Work-Sektion
   beehelp.jpg
   femira.jpg
   human.jpg             (You Know That You're a Human?)
@@ -13,6 +11,12 @@ Projects (any names work — update the `image` paths in lib/content.ts):
   morphosis.jpg
   jardin.jpg            (Jardin de la Crimee)
   next-stop.jpg
+  (Namen sind egal — Hauptsache erkennbar, welches Projekt)
 
-Until then, grayscale placeholders from picsum.photos are used.
-Tell Claude "I dropped the images in" and they get wired up.
+/memories/              -> Erinnerungsfotos fuer die About-Timeline
+  performance-one-1.jpg, performance-one-2.jpg, ...
+  dhbw-1.jpg, dhbw-2.jpg, ...
+  (beliebig viele pro Ort, die Slideshow passt sich an)
+
+Formate: jpg/png/webp, gern ~1600px breit. Farbige Bilder sind ok —
+die Website zeigt sie aktuell in schwarz-weiss (CSS-Filter).
