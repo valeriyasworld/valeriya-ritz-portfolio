@@ -63,28 +63,33 @@ export const about = {
   timeline: [
     {
       period: "3 years",
-      title: "Agency",
-      what: "Digital design, brand, motion, campaigns, websites, real client work.",
+      title: "Jr Human Experience Designer",
+      org: { label: "@PERFORMANCE ONE", href: "https://performance.one/" },
+      dates: "aug 2023 – sep 2026",
+      what: "Digital design, brand, social, campaigns, websites, real client work.",
       changed:
-        "It made me an allrounder — and taught me how design survives contact with reality: deadlines, feedback, budgets, people.",
+        "Working at agency made me an allrounder — and taught me how design survives contact with reality: deadlines, feedback, budgets, people.",
     },
     {
-      period: "B.A.",
-      title: "DHBW Media Design",
+      period: "3 years",
+      title: "B.A. Media Design",
+      org: {
+        label: "@DHBW Ravensburg",
+        href: "https://www.mediendesign-ravensburg.de/",
+      },
+      dates: "oct 2023 – sep 2026",
       what: "Digital products, interaction design, visual systems, experimentation.",
       changed:
         "It gave my range a spine. I stopped just making things and started building systems that could carry ideas.",
     },
     {
-      period: "Bachelor project",
-      title: "Filmmaking",
-      what: "Moving image, cinematic storytelling, identity, emotion.",
-      changed:
-        "It showed me what I had been designing all along: not screens — feelings. The camera just made it obvious.",
-    },
-    {
-      period: "Next",
-      title: "Master Creative Direction",
+      period: "1,5 years",
+      title: "M.A. Creative Direction",
+      org: {
+        label: "@Design PF",
+        href: "https://designpf.hs-pforzheim.de/macd",
+      },
+      dates: "expected oct 2026 – mar 2028",
       what: "Direction, concept, narrative, visual strategy.",
       changed:
         "Where everything converges. Systems and stories, strategy and intuition — finally in one job description.",

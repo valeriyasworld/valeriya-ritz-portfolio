@@ -40,12 +40,21 @@ export default function About() {
                 <li className="group py-10 first:pt-0 md:py-12">
                   <div className="flex items-baseline justify-between gap-4">
                     <h3 className="font-display text-3xl tracking-tight md:text-4xl">
-                      {step.title}
+                      {step.title}{" "}
+                      <a
+                        href={step.org.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="link-line"
+                      >
+                        {step.org.label}
+                      </a>
                     </h3>
                     <span className="micro shrink-0 text-grey">
                       {step.period}
                     </span>
                   </div>
+                  <p className="micro mt-3 text-grey">{step.dates}</p>
                   <p className="mt-3 text-sm text-grey md:text-base">
                     {step.what}
                   </p>
