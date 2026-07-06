@@ -231,7 +231,7 @@ export const projects: Project[] = [
   {
     id: "morphosis",
     title: "Morphosis",
-    category: "Design System / Werkschau",
+    category: "Design Conception / Werkschau",
     year: "2026",
     description:
       "A visual system for a design exhibition, built around transformation and identity.",
