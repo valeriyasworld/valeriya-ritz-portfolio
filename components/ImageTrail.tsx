@@ -101,18 +101,19 @@ export default function ImageTrail({
         </div>
       </div>
 
-      {/* actual section content above the trail */}
-      <div className="relative z-10">{children}</div>
+      {/* actual section content above the trail — the mobile top padding
+          creates the whitespace band the pop-in photos live in */}
+      <div className="relative z-10 pt-44 md:pt-0">{children}</div>
     </div>
   );
 }
 
-/* scattered in the dedicated whitespace band ABOVE the sign — the contact
-   section reserves extra top padding on mobile so nothing overlaps text */
+/* pixel-anchored spots inside the mobile whitespace band (~176px tall),
+   safely above the sign */
 const MOBILE_SPOTS: React.CSSProperties[] = [
-  { top: "0.5%", left: "6%" },
-  { top: "1.8%", right: "8%" },
-  { top: "3.4%", left: "28%" },
-  { top: "5%", right: "24%" },
-  { top: "6.4%", left: "10%" },
+  { top: 8, left: "6%" },
+  { top: 26, right: "8%" },
+  { top: 62, left: "32%" },
+  { top: 30, left: "58%" },
+  { top: 78, right: "18%" },
 ];
