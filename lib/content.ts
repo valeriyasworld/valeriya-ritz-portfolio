@@ -66,7 +66,7 @@ export const about = {
       title: "B.A. Media Conception & Production",
       org: {
         label: "@HFU Furtwangen",
-        href: "https://www.hs-furtwangen.de/studium/studiengaenge/medienkonzeption-bachelor",
+        href: "https://www.hs-furtwangen.de/en/study/programmes/media-design-bachelor",
       },
       // >>> check the years — assumed from "3 semesters before DHBW"
       dates: "2021 – 2023 · discontinued",
