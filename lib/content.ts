@@ -113,7 +113,10 @@ export const about = {
     {
       period: "1 year",
       title: "Tutor",
-      org: { label: "@Center for Immersive Media", href: "https://cim-lab.de/" },
+      org: {
+        label: "@Center for Immersive Media",
+        href: "https://cim-lab.de/valeriya-ritz/",
+      },
       dates: "DHBW Ravensburg · jul 2025 – present",
       what: "Immersive media, studio equipment, student support, technical workflows.",
       changed:
