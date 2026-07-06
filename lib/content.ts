@@ -180,7 +180,7 @@ export const projects: Project[] = [
     id: "beehelp",
     title: "Beehelp",
     category: "Digital Product / Interaction Design",
-    year: "2024",
+    year: "2025",
     description:
       "A neighborhood help app with a playful visual language and social purpose.",
     image: "/media/projects/beehelp.png",
@@ -190,7 +190,7 @@ export const projects: Project[] = [
     id: "femira",
     title: "Femira",
     category: "Brand / Digital / Campaign",
-    year: "2024",
+    year: "2026",
     description:
       "A sensitive and strategic design project around women's health and communication.",
     image: "/media/projects/femira.png",
@@ -200,7 +200,7 @@ export const projects: Project[] = [
     id: "human",
     title: "You Know That You're a Human?",
     category: "Poetic Short Film / Visual Essay",
-    year: "2025",
+    year: "2026",
     description:
       "A small cinematic piece based on poetry, humanity and the feeling of being seen.",
     image: placeholder("human-film"),
@@ -221,7 +221,7 @@ export const projects: Project[] = [
     id: "morphosis",
     title: "Morphosis",
     category: "Design System / Werkschau",
-    year: "2025",
+    year: "2026",
     description:
       "A visual system for a design exhibition, built around transformation and identity.",
     image: placeholder("morphosis"),
