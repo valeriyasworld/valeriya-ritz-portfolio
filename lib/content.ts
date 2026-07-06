@@ -70,9 +70,9 @@ export const about = {
       },
       // >>> check the years — assumed from "3 semesters before DHBW"
       dates: "2021 – 2023 · discontinued",
-      what: "Media conception across UX, audio/video production, computer graphics, coding and marketing.",
+      what: "First steps in filmmaking — plus UX, audio/video production, computer graphics and coding.",
       changed:
-        "Three semesters at the intersection of all media disciplines showed me what I actually wanted: less theory, more making. Leaving was my first honest design decision.",
+        "This is where I picked up a camera for the first time — the reason I'm so photo- and video-driven today. It was way too technical for me, but the perfect foundation for media design after.",
       memories: [] as string[],
     },
     {
