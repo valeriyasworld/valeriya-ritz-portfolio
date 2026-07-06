@@ -42,12 +42,9 @@ export const showreel = {
 /* ---------------------------------------------------------------- INTRO -- */
 
 export const intro = {
-  // The big two-line positioning statement. *asterisks* mark serif-italic words.
-  statementA: "I design *systems.*",
-  statementB: "I direct *stories.*",
-  sub: "Digital products, visual systems, motion and films — connected by one question: what should this make people feel?",
-  tagline:
-    "A portfolio of digital products, visual systems, motion, films and small personal contradictions.",
+  // One big Hero-style flowing statement. *asterisks* mark serif-italic words.
+  statement:
+    "Valeriya is a media designer moving into *creative direction* — crafting digital products, visual systems, motion and *films,* connected by one question: what should this make people *feel?*",
 };
 
 /* -------------------------------------------------------------- CONTEXT -- */
