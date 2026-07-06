@@ -70,12 +70,12 @@ export const about = {
       changed:
         "Working at agency made me an allrounder — and taught me how design survives contact with reality: deadlines, feedback, budgets, people.",
       // Hover slideshow with memories from this place — cycles every second.
-      // >>> REPLACE ME: drop real photos into /public/media/memories/ and
-      // swap these for e.g. "/media/memories/performance-one-1.jpg"
       memories: [
-        placeholder("performance-one-1", 600, 800),
-        placeholder("performance-one-2", 600, 800),
-        placeholder("performance-one-3", 600, 800),
+        "/media/memories/p_one_1.jpg",
+        "/media/memories/p_one_2.jpg",
+        "/media/memories/p_one_3.jpg",
+        "/media/memories/p_one_4.jpg",
+        "/media/memories/p_one_5.jpg",
       ],
     },
     {
