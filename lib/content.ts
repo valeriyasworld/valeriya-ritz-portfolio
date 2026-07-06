@@ -232,9 +232,5 @@ export const contact = {
     label: "Telegram",
     href: "#", // >>> REPLACE ME: Valeriya sends the Telegram link later
   },
-  phones: [
-    { label: "+49 179 461 97 65", href: "tel:+491794619765" },
-    { label: "+380 99 364 06 81", href: "tel:+380993640681" },
-  ],
-  location: "Germany / available remote",
+  phones: [{ label: "+49 179 461 97 65", href: "tel:+491794619765" }],
 };

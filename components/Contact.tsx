@@ -67,15 +67,17 @@ export default function Contact() {
               {phone.label}
             </a>
           ))}
-          <span className="micro text-grey">{contact.location}</span>
         </Reveal>
       </div>
 
       {/* footer */}
-      <footer className="mt-28 flex justify-center pb-2 md:mt-40">
+      <footer className="mt-28 flex items-baseline justify-center gap-8 pb-2 md:mt-40">
         <span className="micro text-grey">
           Designed &amp; built by Valeriya Ritz © 2026
         </span>
+        <a href="/impressum" className="micro link-line text-grey">
+          Impressum
+        </a>
       </footer>
     </section>
   );
