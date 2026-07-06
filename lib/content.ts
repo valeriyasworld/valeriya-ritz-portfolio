@@ -234,17 +234,15 @@ export const projects: Project[] = [
 
 /**
  * Mouse-trail slideshow in the contact section: images spawn behind the
- * cursor and dissolve like a trace.
- * >>> REPLACE ME: drop photos into /public/media/trail/ (any names) and
- * list them here, e.g. "/media/trail/01.jpg". 6–10 images feel best.
+ * cursor and dissolve like a trace. More images? Drop them into
+ * /public/media/trail/ and add them here.
  */
 export const trailImages = [
-  placeholder("trail-1", 500, 650),
-  placeholder("trail-2", 500, 650),
-  placeholder("trail-3", 500, 650),
-  placeholder("trail-4", 500, 650),
-  placeholder("trail-5", 500, 650),
-  placeholder("trail-6", 500, 650),
+  "/media/trail/trail-1.webp",
+  "/media/trail/trail-2.webp",
+  "/media/trail/trail-3.webp",
+  "/media/trail/trail-4.webp",
+  "/media/trail/trail-5.webp",
 ];
 
 export const contact = {
