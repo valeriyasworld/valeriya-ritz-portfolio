@@ -13,7 +13,7 @@
 import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { projects } from "@/lib/content";
-import { EASE, Reveal, SectionHead } from "./ui";
+import { EASE, Reveal } from "./ui";
 
 export default function Work() {
   const [active, setActive] = useState<number | null>(null);
@@ -29,8 +29,6 @@ export default function Work() {
 
   return (
     <section id="work" className="bg-white px-5 py-28 md:px-10 md:py-40">
-      <SectionHead index="04" label="Selected Work" />
-
       {/* ---------- desktop: name list + floating hover card ---------------- */}
       <div className="relative hidden md:block">
         <ul

@@ -12,12 +12,7 @@ import { Reveal } from "./ui";
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-white px-5 pb-10 pt-28 md:px-10 md:pt-40">
-      <Reveal className="mb-20 flex items-baseline justify-between md:mb-28">
-        <span className="micro text-grey">( 05 )</span>
-        <span className="micro">Contact</span>
-      </Reveal>
-
+    <section id="contact" className="bg-white px-5 pb-10 pt-32 md:px-10 md:pt-48">
       {/* the sign */}
       <div className="text-center">
         <Reveal>

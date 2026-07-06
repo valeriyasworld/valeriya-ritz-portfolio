@@ -38,7 +38,7 @@ export default function Showreel() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.4, ease: [...EASE] }}
-            className="relative mx-5 flex aspect-video w-full max-w-5xl items-center justify-center border border-white/20"
+            className="absolute inset-4 flex items-center justify-center border border-white/20 md:inset-8"
           >
             <motion.span
               animate={{ scale: [1, 1.06, 1], opacity: [0.5, 1, 0.5] }}
@@ -65,18 +65,6 @@ export default function Showreel() {
 
       {/* ---- top spacer (fixed nav sits here) ------------------------------ */}
       <div />
-
-      {/* ---- title card ----------------------------------------------------- */}
-      <div className="relative z-10 px-5 md:px-10">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: [...EASE] }}
-          className="statement !text-[clamp(3rem,11vw,11rem)] text-white"
-        >
-          Valeriya <em className="serif font-light">Ritz</em>
-        </motion.h1>
-      </div>
 
       {/* ---- bottom strip --------------------------------------------------- */}
       <motion.div
