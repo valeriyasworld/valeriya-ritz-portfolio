@@ -62,6 +62,20 @@ export const about = {
     "Currently moving from digital design into creative direction and filmmaking.",
   timeline: [
     {
+      period: "3 semesters",
+      title: "B.A. Medienkonzeption",
+      org: {
+        label: "@HFU Furtwangen",
+        href: "https://www.hs-furtwangen.de/studium/studiengaenge/medienkonzeption-bachelor",
+      },
+      // >>> check the years — assumed from "3 semesters before DHBW"
+      dates: "2021 – 2023 · discontinued",
+      what: "Media conception across UX, audio/video production, computer graphics, coding and marketing.",
+      changed:
+        "Three semesters at the intersection of all media disciplines showed me what I actually wanted: less theory, more making. Leaving was my first honest design decision.",
+      memories: [] as string[],
+    },
+    {
       period: "3 years",
       title: "Jr Human Experience Designer",
       org: { label: "@PERFORMANCE ONE", href: "https://performance.one/" },
@@ -95,6 +109,16 @@ export const about = {
         placeholder("dhbw-2", 600, 800),
         placeholder("dhbw-3", 600, 800),
       ],
+    },
+    {
+      period: "1 year",
+      title: "Tutor",
+      org: { label: "@Center for Immersive Media", href: "https://cim-lab.de/" },
+      dates: "DHBW Ravensburg · jul 2025 – present",
+      what: "Immersive media, studio equipment, student support, technical workflows.",
+      changed:
+        "Working as a tutor at the Center for Immersive Media taught me how to bridge creative ideas with technical setups — supporting students, managing equipment, and keeping immersive productions running.",
+      memories: [] as string[],
     },
     {
       period: "1,5 years",
