@@ -70,7 +70,7 @@ export const about = {
       },
       // >>> check the years — assumed from "3 semesters before DHBW"
       dates: "2021 – 2023 · discontinued",
-      what: "First steps in filmmaking — plus UX, audio/video production, computer graphics and coding.",
+      what: "First steps in filmmaking, UX/UI, audio/video production, computer graphics and coding.",
       changed:
         "This is where I picked up a camera for the first time — the reason I'm so photo- and video-driven today. It was way too technical for me, but the perfect foundation for media design after.",
       memories: [] as string[],
