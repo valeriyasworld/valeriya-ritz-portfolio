@@ -29,10 +29,10 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
     });
   }, [step.memories]);
 
-  // flashback mode: photos cut hard and fast, like remembering
+  // flashback mode: recap-fast cuts, like remembering
   useEffect(() => {
     if (!hovered || !hasMemories) return;
-    const id = setInterval(() => setSlide((s) => s + 1), 350);
+    const id = setInterval(() => setSlide((s) => s + 1), 180);
     return () => clearInterval(id);
   }, [hovered, hasMemories]);
 
@@ -81,7 +81,7 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
                       initial={{ scale: 1.14 }}
                       animate={{ scale: 1, zIndex: 1 }}
                       exit={{ scale: 0.4, opacity: 0, zIndex: 2 }}
-                      transition={{ duration: 0.3, ease: [...EASE] }}
+                      transition={{ duration: 0.18, ease: [...EASE] }}
                       className="absolute inset-0 h-full w-full object-cover grayscale"
                     />
                   </AnimatePresence>
