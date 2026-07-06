@@ -44,14 +44,17 @@ export default function Manifest() {
             key={i}
             className="relative flex min-h-[30vh] w-[86vw] shrink-0 snap-center flex-col justify-center px-5 md:w-[72vw] md:px-16"
           >
-            {/* counter pinned to the top so every statement centers on the
-                same axis regardless of its line count */}
-            <span className="micro absolute left-5 top-0 text-white/40 md:left-16">
-              {String(i + 1).padStart(2, "0")} / {String(manifest.length).padStart(2, "0")}
-            </span>
-            <p className="statement !text-[clamp(1.9rem,5.5vw,5.2rem)] !leading-[1.02]">
-              <Em text={statement} />
-            </p>
+            {/* counter hangs a fixed distance above the statement, so the
+                gap is identical on every slide while the statements stay
+                centered on one shared axis */}
+            <div className="relative">
+              <span className="micro absolute bottom-full left-0 mb-7 text-white/40">
+                {String(i + 1).padStart(2, "0")} / {String(manifest.length).padStart(2, "0")}
+              </span>
+              <p className="statement !text-[clamp(1.9rem,5.5vw,5.2rem)] !leading-[1.02]">
+                <Em text={statement} />
+              </p>
+            </div>
           </div>
         ))}
         {/* trailing breathing space */}
