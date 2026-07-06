@@ -82,7 +82,7 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
                       animate={{ scale: 1, zIndex: 1 }}
                       exit={{ scale: 0.92, opacity: 0, zIndex: 2 }}
                       transition={{ duration: 0.18, ease: [...EASE] }}
-                      className="absolute inset-0 h-full w-full object-cover grayscale"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
                   </AnimatePresence>
                 </motion.div>
