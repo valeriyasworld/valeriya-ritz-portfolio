@@ -111,7 +111,7 @@ export const about = {
         label: "@Center for Immersive Media",
         href: "https://cim-lab.de/valeriya-ritz/",
       },
-      dates: "DHBW Ravensburg · jul 2025 – present",
+      dates: "jul 2025 – present",
       what: "Immersive media, studio equipment and student support — bridging creative ideas with technical setups.",
       memories: [] as string[],
     },
