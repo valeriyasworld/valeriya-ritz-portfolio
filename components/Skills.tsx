@@ -12,16 +12,12 @@
 import { hardSkills, skillsLabel, softSkills } from "@/lib/content";
 import { Reveal } from "./ui";
 
-function Row({ items, italic }: { items: string[]; italic?: boolean }) {
+function Row({ items }: { items: string[] }) {
   return (
     <>
       {items.map((skill) => (
         <span key={skill} className="flex shrink-0 items-center">
-          <span
-            className={`font-display text-5xl tracking-tight md:text-7xl ${
-              italic ? "serif !text-4xl md:!text-6xl" : ""
-            }`}
-          >
+          <span className="font-display text-5xl tracking-tight md:text-7xl">
             {skill}
           </span>
           <span
@@ -51,11 +47,11 @@ export default function Skills() {
         </div>
       </div>
 
-      {/* soft skills → right, italic */}
-      <div className="mt-10 overflow-hidden md:mt-14">
+      {/* soft skills → right, same type as row one */}
+      <div className="mt-4 overflow-hidden md:mt-6">
         <div className="marquee-track-reverse flex w-max">
-          <Row items={softSkills} italic />
-          <Row items={softSkills} italic />
+          <Row items={softSkills} />
+          <Row items={softSkills} />
         </div>
       </div>
     </section>
