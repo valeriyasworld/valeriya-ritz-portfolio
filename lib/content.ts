@@ -253,7 +253,7 @@ export const contact = {
   email: "valeriyaritz@gmail.com",
   linkedin: {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/", // >>> REPLACE ME with your LinkedIn profile URL
+    href: "https://www.linkedin.com/in/valeriya-ritz-919bba200/",
   },
   instagram: {
     label: "Instagram",
