@@ -2,32 +2,22 @@
 
 /**
  * 02 — INTRO / POSITIONING
- * Hero-style editorial statement: sentence-case Nyght, left-aligned with a
- * generous margin, words fading in one by one while scrolling.
+ * One big Hero-style flowing statement: sentence-case Nyght over four-ish
+ * lines, left-aligned with a generous margin, words fading in one by one
+ * while scrolling. No columns, no sub copy — the paragraph is the section.
  */
 
 import { intro } from "@/lib/content";
-import { Reveal, ScrollWords } from "./ui";
+import { ScrollWords } from "./ui";
 
 export default function Intro() {
   return (
     <section id="intro" className="bg-white px-5 py-32 md:px-10 md:py-48">
-      <div className="max-w-5xl md:ml-[10vw]">
+      <div className="max-w-6xl md:ml-[8vw]">
         <ScrollWords
-          text={`${intro.statementA} ${intro.statementB}`}
-          className="statement !text-[clamp(2.3rem,5vw,5.2rem)] !leading-[1.12]"
+          text={intro.statement}
+          className="statement !text-[clamp(2.1rem,4.6vw,4.8rem)] !leading-[1.14]"
         />
-
-        <div className="mt-14 grid gap-8 md:mt-20 md:grid-cols-12">
-          <Reveal className="md:col-span-6">
-            <p className="text-base leading-relaxed text-black md:text-lg">
-              {intro.sub}
-            </p>
-          </Reveal>
-          <Reveal delay={0.15} className="md:col-span-4 md:col-start-9">
-            <p className="micro leading-loose text-grey">{intro.tagline}</p>
-          </Reveal>
-        </div>
       </div>
     </section>
   );
