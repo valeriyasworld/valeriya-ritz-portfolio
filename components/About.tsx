@@ -71,16 +71,16 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
                   transition={{ duration: 0.25, ease: [...EASE] }}
                   className="relative aspect-[3/4] overflow-hidden bg-black shadow-xl"
                 >
-                  {/* modern recap flashbacks: the outgoing photo collapses
-                      into the center while the next one settles in behind it */}
+                  {/* recap flashbacks: every photo drifts gently backwards —
+                      it settles in, then recedes and dissolves behind the next */}
                   <AnimatePresence mode="popLayout">
                     <motion.img
                       key={slide % step.memories.length}
                       src={step.memories[slide % step.memories.length]}
                       alt={`${step.org.label} — memory`}
-                      initial={{ scale: 1.14 }}
+                      initial={{ scale: 1.08 }}
                       animate={{ scale: 1, zIndex: 1 }}
-                      exit={{ scale: 0.4, opacity: 0, zIndex: 2 }}
+                      exit={{ scale: 0.92, opacity: 0, zIndex: 2 }}
                       transition={{ duration: 0.18, ease: [...EASE] }}
                       className="absolute inset-0 h-full w-full object-cover grayscale"
                     />
