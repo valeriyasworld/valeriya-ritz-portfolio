@@ -44,7 +44,7 @@ export const showreel = {
 export const intro = {
   // One big Hero-style flowing statement. *asterisks* mark serif-italic words.
   statement:
-    "Valeriya is a media designer moving into *creative direction* — crafting digital products, visual systems, motion and *films,* connected by one question: what should this make people *feel?*",
+    "Hey, I'm Valeriya. A media designer working across digital design, visual systems and *film,* connected by one question: What should this make people *feel?*",
 };
 
 /* -------------------------------------------------------------- CONTEXT -- */
