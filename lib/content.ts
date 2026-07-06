@@ -144,7 +144,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "beehelp",
-    title: "BeeHelp",
+    title: "Beehelp",
     category: "Digital Product / Interaction Design",
     year: "2024",
     description:

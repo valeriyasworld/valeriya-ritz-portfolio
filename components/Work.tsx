@@ -10,29 +10,19 @@
  * >>> later: point each project's `href` in lib/content.ts to a detail page.
  */
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { projects } from "@/lib/content";
 import { EASE, Reveal } from "./ui";
 
 export default function Work() {
   const [active, setActive] = useState<number | null>(null);
-  const listRef = useRef<HTMLUListElement>(null);
-  const [cardTop, setCardTop] = useState(0);
-
-  const onEnter = (i: number) => (e: React.SyntheticEvent<HTMLElement>) => {
-    setActive(i);
-    // vertically align the image card with the hovered project name
-    const row = e.currentTarget;
-    setCardTop(row.offsetTop + row.offsetHeight / 2);
-  };
 
   return (
     <section id="work" className="bg-white px-5 py-28 md:px-10 md:py-40">
       {/* ---------- desktop: name list + floating hover card ---------------- */}
       <div className="relative hidden md:block">
         <ul
-          ref={listRef}
           className="relative z-10 max-w-4xl"
           onMouseLeave={() => setActive(null)}
         >
@@ -44,48 +34,43 @@ export default function Work() {
                 <li>
                   <a
                     href={p.href}
-                    onMouseEnter={onEnter(i)}
-                    onFocus={onEnter(i)}
-                    className="group block py-5"
+                    onMouseEnter={() => setActive(i)}
+                    onFocus={() => setActive(i)}
+                    className="group block py-4"
                   >
                     <span className="flex items-center gap-6">
-                      {/* arrow slides in on hover */}
+                      {/* arrow fades in on hover */}
                       <span
                         aria-hidden
-                        className={`w-12 shrink-0 font-display text-4xl transition-all duration-300 ease-editorial lg:w-16 lg:text-5xl ${
+                        className={`w-12 shrink-0 font-display text-4xl transition-all duration-700 ease-editorial lg:w-16 lg:text-5xl ${
                           isActive
                             ? "translate-x-0 opacity-100"
-                            : "-translate-x-4 opacity-0"
+                            : "-translate-x-3 opacity-0"
                         }`}
                       >
                         →
                       </span>
+                      {/* name glides right on hover (transform = smooth) */}
                       <span
-                        className={`font-display text-[clamp(3.2rem,6.5vw,7rem)] leading-[1.05] tracking-tight transition-all duration-300 ease-editorial ${
+                        className={`inline-block font-display text-[clamp(3.2rem,6.5vw,7rem)] leading-[1.05] tracking-tight transition-all duration-700 ease-editorial ${
                           isActive
-                            ? "text-black"
+                            ? "translate-x-0 text-black"
                             : dimmed
-                            ? "text-black/15"
-                            : "text-black/30"
-                        } ${!isActive ? "-ml-[4.5rem] lg:-ml-[5.5rem]" : ""}`}
+                            ? "-translate-x-[4.5rem] text-black/15 lg:-translate-x-[5.5rem]"
+                            : "-translate-x-[4.5rem] text-black/30 lg:-translate-x-[5.5rem]"
+                        }`}
                       >
                         {p.title}
                       </span>
                     </span>
-                    {/* meta line under the active name */}
-                    <AnimatePresence>
-                      {isActive && (
-                        <motion.span
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: "auto" }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3, ease: [...EASE] }}
-                          className="micro block overflow-hidden pl-[4.5rem] pt-2 text-grey lg:pl-[5.5rem]"
-                        >
-                          {p.category.replaceAll("/", "·")} · {p.year}
-                        </motion.span>
-                      )}
-                    </AnimatePresence>
+                    {/* meta line: always occupies its height so rows never jump */}
+                    <span
+                      className={`micro block h-5 pl-[4.5rem] pt-1 text-grey transition-opacity duration-500 ease-editorial lg:pl-[5.5rem] ${
+                        isActive ? "opacity-100" : "opacity-0"
+                      }`}
+                    >
+                      {p.category.replaceAll("/", "·")} · {p.year}
+                    </span>
                   </a>
                 </li>
               </Reveal>
@@ -93,18 +78,17 @@ export default function Work() {
           })}
         </ul>
 
-        {/* floating image card, aligned with the hovered project */}
+        {/* image card — fixed at the vertical center of the screen, so the
+            preview is always in view no matter which project is hovered */}
         <AnimatePresence>
           {active !== null && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1, top: cardTop }}
-              exit={{ opacity: 0, scale: 0.97 }}
-              transition={{ duration: 0.45, ease: [...EASE] }}
-              className="pointer-events-none absolute right-0 z-20 hidden w-[44vw] max-w-[680px] -translate-y-1/2 lg:block"
-              style={{ top: cardTop }}
-            >
-              <div className="relative aspect-[16/10] overflow-hidden bg-black shadow-2xl">
+            <div className="pointer-events-none fixed right-10 top-1/2 z-20 hidden w-[44vw] max-w-[680px] -translate-y-1/2 lg:block">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.6, ease: [...EASE] }}
+                className="relative aspect-[16/10] overflow-hidden bg-black shadow-2xl">
                 <AnimatePresence mode="popLayout">
                   <motion.img
                     key={projects[active].id}
@@ -117,8 +101,8 @@ export default function Work() {
                     className="absolute inset-0 h-full w-full object-cover grayscale"
                   />
                 </AnimatePresence>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </div>
