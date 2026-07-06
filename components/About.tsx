@@ -39,9 +39,9 @@ export default function About() {
           <ol>
             {about.timeline.map((step, i) => (
               <Reveal key={step.title} delay={i * 0.05}>
-                <li className="group border-t border-line py-10 transition-colors duration-500 first:border-t-0 md:py-12">
+                <li className="group py-10 first:pt-0 md:py-12">
                   <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="text-2xl font-bold uppercase tracking-tight md:text-3xl">
+                    <h3 className="font-display text-3xl tracking-tight md:text-4xl">
                       {step.title}
                     </h3>
                     <span className="micro shrink-0 text-grey">
@@ -62,7 +62,7 @@ export default function About() {
       </div>
 
       {/* contradictions block */}
-      <div className="mt-24 border-t border-line pt-10 md:mt-32">
+      <div className="mt-24 md:mt-32">
         <Reveal>
           <span className="micro text-grey">Small personal contradictions</span>
         </Reveal>
@@ -70,8 +70,8 @@ export default function About() {
           {about.contradictions.map((c, i) => (
             <Reveal key={c.a} delay={i * 0.08}>
               {/* hover: the rational word steps back, the honest one steps in */}
-              <p className="group cursor-default text-2xl leading-tight md:text-3xl">
-                <span className="font-bold uppercase tracking-tight transition-opacity duration-300 group-hover:opacity-30">
+              <p className="group cursor-default text-3xl leading-tight md:text-4xl">
+                <span className="font-display tracking-tight transition-opacity duration-300 group-hover:opacity-30">
                   {c.a}
                 </span>
                 <br />

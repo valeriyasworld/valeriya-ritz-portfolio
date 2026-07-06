@@ -13,7 +13,7 @@ import { Reveal } from "./ui";
 export default function Contact() {
   return (
     <section id="contact" className="bg-white px-5 pb-10 pt-28 md:px-10 md:pt-40">
-      <Reveal className="mb-20 flex items-baseline justify-between border-t border-line pt-4 md:mb-28">
+      <Reveal className="mb-20 flex items-baseline justify-between md:mb-28">
         <span className="micro text-grey">( 05 )</span>
         <span className="micro">Contact</span>
       </Reveal>
@@ -73,7 +73,7 @@ export default function Contact() {
       </div>
 
       {/* footer */}
-      <footer className="mt-28 flex flex-col items-center justify-between gap-4 border-t border-line pt-6 md:mt-40 md:flex-row">
+      <footer className="mt-28 flex flex-col items-center justify-between gap-4 pb-2 md:mt-40 md:flex-row">
         <span className="micro text-grey">
           © 2026 Valeriya Ritz — Portfolio
         </span>
