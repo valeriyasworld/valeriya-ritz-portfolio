@@ -17,7 +17,8 @@ function Row({ items }: { items: string[] }) {
     <>
       {items.map((skill) => (
         <span key={skill} className="flex shrink-0 items-center">
-          <span className="font-display text-5xl tracking-tight md:text-7xl">
+          {/* generous leading so Nyght descenders (g, y, p) never get clipped */}
+          <span className="font-display text-5xl leading-[1.35] tracking-tight md:text-7xl">
             {skill}
           </span>
           <span
