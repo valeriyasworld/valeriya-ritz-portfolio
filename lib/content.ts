@@ -156,13 +156,10 @@ export const softSkills = [
 // *asterisks* mark serif-italic words inside each statement.
 export const manifest = [
   "I don't want to make things look better. I want to make them *matter.*",
-  "Good design is not decoration. It is *direction.*",
-  "I believe in systems. But not in *soulless* ones.",
-  "A project should have a *reason* to exist.",
-  "Emotion is not the opposite of *strategy.*",
+  "Strategy gives direction. Emotion gives it *meaning.*",
   "I care about pixels. And about the *feeling* they leave behind.",
-  "I like structure. Until it limits *curiosity.*",
-  "I take design seriously. *Not myself.*",
+  "The best ideas begin with *questions.*",
+  "Create more. Consume *less.*",
 ];
 
 /* ----------------------------------------------------------------- WORK -- */
