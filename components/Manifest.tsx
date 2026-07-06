@@ -33,7 +33,7 @@ export default function Manifest() {
 
   return (
     <section id="manifest" className="bg-black py-28 text-white md:py-40">
-      <Reveal className="mb-16 flex items-baseline justify-between border-t border-white/20 px-5 pt-4 md:mb-24 md:px-10">
+      <Reveal className="mb-16 flex items-baseline justify-between px-5 md:mb-24 md:px-10">
         <span className="micro text-white/50">( 03 )</span>
         <span className="micro">Manifest</span>
       </Reveal>
