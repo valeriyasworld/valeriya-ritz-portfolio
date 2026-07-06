@@ -70,9 +70,7 @@ export const about = {
       },
       // >>> check the years — assumed from "3 semesters before DHBW"
       dates: "2021 – 2023 · discontinued",
-      what: "First steps in filmmaking, UX/UI, audio/video production, computer graphics and coding.",
-      changed:
-        "This is where I picked up a camera for the first time — the reason I'm so photo- and video-driven today. It was way too technical for me, but the perfect foundation for media design after.",
+      what: "First steps in filmmaking, UX/UI and audio/video production — too technical for me, but the perfect foundation.",
       memories: [] as string[],
     },
     {
@@ -80,9 +78,7 @@ export const about = {
       title: "Jr Human Experience Designer",
       org: { label: "@PERFORMANCE ONE", href: "https://performance.one/" },
       dates: "aug 2023 – sep 2026",
-      what: "Digital design, brand, social, campaigns, websites, real client work.",
-      changed:
-        "Working at agency made me an allrounder — and taught me how design survives contact with reality: deadlines, feedback, budgets, people.",
+      what: "Digital design, brand, social and real client work — the allrounder years, where design met deadlines, budgets and people.",
       // Hover slideshow with memories from this place — cycles every second.
       memories: [
         "/media/memories/p_one_1.jpg",
@@ -100,9 +96,7 @@ export const about = {
         href: "https://www.mediendesign-ravensburg.de/",
       },
       dates: "oct 2023 – sep 2026",
-      what: "Digital products, interaction design, visual systems, experimentation.",
-      changed:
-        "It gave my range a spine. I stopped just making things and started building systems that could carry ideas.",
+      what: "Digital products, interaction design and visual systems — where making things turned into building systems.",
       // >>> REPLACE ME: real DHBW memories, e.g. "/media/memories/dhbw-1.jpg"
       memories: [
         placeholder("dhbw-1", 600, 800),
@@ -118,9 +112,7 @@ export const about = {
         href: "https://cim-lab.de/valeriya-ritz/",
       },
       dates: "DHBW Ravensburg · jul 2025 – present",
-      what: "Immersive media, studio equipment, student support, technical workflows.",
-      changed:
-        "Working as a tutor at the Center for Immersive Media taught me how to bridge creative ideas with technical setups — supporting students, managing equipment, and keeping immersive productions running.",
+      what: "Immersive media, studio equipment and student support — bridging creative ideas with technical setups.",
       memories: [] as string[],
     },
     {
@@ -131,9 +123,7 @@ export const about = {
         href: "https://designpf.hs-pforzheim.de/macd",
       },
       dates: "expected oct 2026 – mar 2028",
-      what: "Direction, concept, narrative, visual strategy.",
-      changed:
-        "Where everything converges. Systems and stories, strategy and intuition — finally in one job description.",
+      what: "Direction, concept, narrative and visual strategy — systems and stories, finally in one job description.",
       // no memories yet — the future hasn't happened :)
       memories: [] as string[],
     },

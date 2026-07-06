@@ -93,9 +93,6 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
       </div>
       <p className="micro mt-3 text-grey">{step.dates}</p>
       <p className="mt-3 text-sm text-grey md:text-base">{step.what}</p>
-      <p className="font-display mt-5 text-lg leading-snug md:text-xl">
-        {step.changed}
-      </p>
     </li>
   );
 }
