@@ -71,13 +71,9 @@ export default function Showreel() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}
-        className="relative z-10 flex items-end justify-between px-5 pb-6 md:px-10 md:pb-8"
+        className="relative z-10 flex justify-center pb-6 md:pb-8"
       >
-        <span className="micro max-w-[45%] text-white/60">
-          {showreel.roleLine}
-        </span>
-
-        {/* tiny scroll hint */}
+        {/* tiny scroll hint — the only interface element besides nav + logo */}
         <span className="micro flex flex-col items-center gap-2 text-white/60">
           scroll
           <motion.span
@@ -85,10 +81,6 @@ export default function Showreel() {
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
             className="block h-8 w-px origin-top bg-white/60"
           />
-        </span>
-
-        <span className="micro text-right text-white/60">
-          {showreel.edition}
         </span>
       </motion.div>
     </section>

@@ -48,11 +48,11 @@ export default function Work() {
                     onFocus={onEnter(i)}
                     className="group block py-5"
                   >
-                    <span className="flex items-center gap-5">
+                    <span className="flex items-center gap-6">
                       {/* arrow slides in on hover */}
                       <span
                         aria-hidden
-                        className={`font-display text-3xl transition-all duration-300 ease-editorial lg:text-4xl ${
+                        className={`w-12 shrink-0 font-display text-4xl transition-all duration-300 ease-editorial lg:w-16 lg:text-5xl ${
                           isActive
                             ? "translate-x-0 opacity-100"
                             : "-translate-x-4 opacity-0"
@@ -61,13 +61,13 @@ export default function Work() {
                         →
                       </span>
                       <span
-                        className={`font-display text-5xl leading-[1.1] tracking-tight transition-all duration-300 ease-editorial lg:text-6xl ${
+                        className={`font-display text-[clamp(3.2rem,6.5vw,7rem)] leading-[1.05] tracking-tight transition-all duration-300 ease-editorial ${
                           isActive
-                            ? "-translate-x-0 text-black"
+                            ? "text-black"
                             : dimmed
                             ? "text-black/15"
                             : "text-black/30"
-                        } ${!isActive ? "-ml-12" : ""}`}
+                        } ${!isActive ? "-ml-[4.5rem] lg:-ml-[5.5rem]" : ""}`}
                       >
                         {p.title}
                       </span>
@@ -80,7 +80,7 @@ export default function Work() {
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3, ease: [...EASE] }}
-                          className="micro block overflow-hidden pl-[3.75rem] pt-2 text-grey"
+                          className="micro block overflow-hidden pl-[4.5rem] pt-2 text-grey lg:pl-[5.5rem]"
                         >
                           {p.category.replaceAll("/", "·")} · {p.year}
                         </motion.span>
@@ -97,11 +97,11 @@ export default function Work() {
         <AnimatePresence>
           {active !== null && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.94, rotate: 0 }}
-              animate={{ opacity: 1, scale: 1, rotate: 3, top: cardTop }}
-              exit={{ opacity: 0, scale: 0.96 }}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1, top: cardTop }}
+              exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.45, ease: [...EASE] }}
-              className="pointer-events-none absolute right-0 z-20 hidden w-[38vw] max-w-[560px] -translate-y-1/2 lg:block"
+              className="pointer-events-none absolute right-0 z-20 hidden w-[44vw] max-w-[680px] -translate-y-1/2 lg:block"
               style={{ top: cardTop }}
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-black shadow-2xl">

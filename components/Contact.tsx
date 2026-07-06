@@ -58,6 +58,10 @@ export default function Contact() {
           <a href={contact.instagram.href} target="_blank" rel="noreferrer" className="micro link-line">
             {contact.instagram.label}
           </a>
+          {/* >>> Telegram href is a placeholder until Valeriya sends the link */}
+          <a href={contact.telegram.href} target="_blank" rel="noreferrer" className="micro link-line">
+            {contact.telegram.label}
+          </a>
           {contact.phones.map((phone) => (
             <a key={phone.href} href={phone.href} className="micro link-line tabular-nums">
               {phone.label}
@@ -68,16 +72,10 @@ export default function Contact() {
       </div>
 
       {/* footer */}
-      <footer className="mt-28 flex flex-col items-center justify-between gap-4 pb-2 md:mt-40 md:flex-row">
+      <footer className="mt-28 flex justify-center pb-2 md:mt-40">
         <span className="micro text-grey">
-          © 2026 Valeriya Ritz — Portfolio
+          Designed &amp; built by Valeriya Ritz © 2026
         </span>
-        <span className="micro serif normal-case tracking-normal text-grey">
-          {contact.footerLine}
-        </span>
-        <a href="#showreel" className="micro link-line">
-          Back to top ↑
-        </a>
       </footer>
     </section>
   );
