@@ -113,6 +113,19 @@ export const about = {
   ],
 };
 
+/* --------------------------------------------------------------- SKILLS -- */
+
+// Slow marquee under About — tools first, more can be added anytime.
+export const skillsLabel = "( Soft & Hard Skills )";
+export const skills = [
+  "Figma",
+  "DaVinci Resolve",
+  "Adobe Ai",
+  "Adobe Ps",
+  "Adobe InD",
+  "Adobe Pr",
+];
+
 /* ------------------------------------------------------------- MANIFEST -- */
 
 // *asterisks* mark serif-italic words inside each statement.
