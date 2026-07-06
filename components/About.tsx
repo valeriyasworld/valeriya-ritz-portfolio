@@ -7,13 +7,11 @@
  */
 
 import { about } from "@/lib/content";
-import { Em, Reveal, SectionHead } from "./ui";
+import { Em, Reveal } from "./ui";
 
 export default function About() {
   return (
     <section id="context" className="bg-white px-5 pb-32 md:px-10 md:pb-48">
-      <SectionHead index="02" label="Context" />
-
       <div className="grid gap-12 md:grid-cols-12">
         {/* sticky narrative heading */}
         <div className="md:col-span-5">

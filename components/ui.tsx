@@ -121,18 +121,3 @@ export function ScrollWords({
   );
 }
 
-/** Editorial section header: "( 01 )  LABEL" */
-export function SectionHead({
-  index,
-  label,
-}: {
-  index: string;
-  label: string;
-}) {
-  return (
-    <Reveal className="mb-14 flex items-baseline justify-between md:mb-20">
-      <span className="micro text-grey">( {index} )</span>
-      <span className="micro">{label}</span>
-    </Reveal>
-  );
-}
