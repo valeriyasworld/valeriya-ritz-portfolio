@@ -62,7 +62,7 @@ export const about = {
     "Currently moving from digital design into creative direction and filmmaking.",
   timeline: [
     {
-      period: "3 semesters",
+      period: "1,5 years",
       title: "B.A. Media Conception & Production",
       org: {
         label: "@HFU Furtwangen",
@@ -296,7 +296,7 @@ export const contact = {
   },
   telegram: {
     label: "Telegram",
-    href: "#", // >>> REPLACE ME: Valeriya sends the Telegram link later
+    href: "https://t.me/valeriyasmood",
   },
   phones: [{ label: "+49 179 461 97 65", href: "tel:+491794619765" }],
 };
