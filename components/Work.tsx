@@ -113,7 +113,7 @@ export default function Work() {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.4, ease: [...EASE] }}
-                      className="absolute inset-0 h-full w-full object-cover grayscale"
+                      className="absolute inset-0 h-full w-full object-cover"
                     />
                   )}
                 </AnimatePresence>
@@ -143,7 +143,7 @@ export default function Work() {
                     src={p.image}
                     alt={`${p.title} — preview`}
                     loading="lazy"
-                    className="h-full w-full object-cover grayscale"
+                    className="h-full w-full object-cover"
                   />
                 )}
               </div>

@@ -183,7 +183,7 @@ export const projects: Project[] = [
     year: "2024",
     description:
       "A neighborhood help app with a playful visual language and social purpose.",
-    image: placeholder("beehelp"),
+    image: "/media/projects/beehelp.png",
     href: "#work", // >>> later: "/work/beehelp"
   },
   {
@@ -193,7 +193,7 @@ export const projects: Project[] = [
     year: "2024",
     description:
       "A sensitive and strategic design project around women's health and communication.",
-    image: placeholder("femira"),
+    image: "/media/projects/femira.png",
     href: "#work",
   },
   {
@@ -214,7 +214,7 @@ export const projects: Project[] = [
     year: "2024",
     description:
       "Website redesign focused on digital experience, structure and visual refinement.",
-    image: placeholder("kerasilk"),
+    image: "/media/projects/kerasilk.png",
     href: "#work",
   },
   {
@@ -225,6 +225,7 @@ export const projects: Project[] = [
     description:
       "A visual system for a design exhibition, built around transformation and identity.",
     image: placeholder("morphosis"),
+    video: "/media/projects/morphosis.mp4",
     href: "#work",
   },
   {
@@ -234,7 +235,7 @@ export const projects: Project[] = [
     year: "2025",
     description:
       "A fictional website for a Crimean winery. A personal promise: if Crimea returns to Ukraine, I will design a real website for a winery there — for free.",
-    image: placeholder("jardin-crimee"),
+    image: "/media/projects/jardin.jpg",
     href: "#work",
   },
   {
@@ -245,6 +246,7 @@ export const projects: Project[] = [
     description:
       "A film about metro systems in Ukraine and Germany, with a drone-like, observational aesthetic.",
     image: placeholder("next-stop"),
+    video: "/media/projects/next-stop.mp4",
     href: "#work",
   },
 ];
