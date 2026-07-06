@@ -50,7 +50,12 @@ function FadingToken({
 
   if (token.kind === "image") {
     const cls =
-      "mx-[0.18em] inline-block aspect-square h-[0.82em] w-auto -translate-y-[0.06em] object-cover align-baseline";
+      "relative mx-[0.18em] inline-block aspect-square h-[0.82em] w-auto -translate-y-[0.06em] cursor-pointer object-cover align-baseline";
+    // grows on hover so the tiny picture becomes actually viewable
+    const hover = {
+      whileHover: { scale: 4, zIndex: 30 },
+      transition: { duration: 0.35, ease: [0.22, 1, 0.36, 1] as const },
+    };
     // .mp4 slots become tiny muted video loops — a film living inside the word "film"
     if (token.src.endsWith(".mp4")) {
       return (
@@ -63,11 +68,19 @@ function FadingToken({
           playsInline
           aria-hidden
           className={cls}
+          {...hover}
         />
       );
     }
     return (
-      <motion.img style={{ opacity }} src={token.src} alt="" aria-hidden className={cls} />
+      <motion.img
+        style={{ opacity }}
+        src={token.src}
+        alt=""
+        aria-hidden
+        className={cls}
+        {...hover}
+      />
     );
   }
   return (
