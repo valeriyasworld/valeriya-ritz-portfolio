@@ -175,10 +175,6 @@ body {
 .marquee-track-reverse {
   animation: marquee 32s linear infinite reverse;
 }
-/* slower drift for the photo film strip */
-.marquee-slow {
-  animation: marquee 55s linear infinite;
-}
 
 /* Hide scrollbars on the manifest slider while keeping it scrollable */
 .no-scrollbar {
@@ -203,6 +199,18 @@ body {
 ::selection {
   background: var(--black);
   color: var(--white);
+}
+
+/* Visible, on-brand focus ring for keyboard users (WCAG focus-states) */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Kill the 300ms tap delay on touch devices */
+a,
+button {
+  touch-action: manipulation;
 }
 
 @media (prefers-reduced-motion: reduce) {

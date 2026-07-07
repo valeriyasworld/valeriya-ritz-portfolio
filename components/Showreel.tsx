@@ -20,6 +20,8 @@ export default function Showreel() {
       id="showreel"
       className="relative flex h-[100svh] flex-col justify-between overflow-hidden bg-black text-white"
     >
+      {/* the page's single h1 — visually the reel speaks, semantically this does */}
+      <h1 className="sr-only">Valeriya Ritz — Portfolio 2026</h1>
       {/* ---- reel layer ---------------------------------------------------- */}
       {showreel.videoSrc ? (
         <video

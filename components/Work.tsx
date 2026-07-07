@@ -10,10 +10,42 @@
  * >>> later: point each project's `href` in lib/content.ts to a detail page.
  */
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { projects } from "@/lib/content";
+import { useRef, useState } from "react";
+import { AnimatePresence, motion, useInView } from "framer-motion";
+import { projects, type Project } from "@/lib/content";
 import { EASE, Reveal } from "./ui";
+
+/**
+ * Mobile card media: video only mounts (and starts downloading) once the
+ * card scrolls near the viewport — otherwise phones would fetch ~20MB of
+ * video on page load. Until then the poster image shows.
+ */
+function MobileCardMedia({ p }: { p: Project }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "300px" });
+
+  return (
+    <div ref={ref} className="relative aspect-[4/3] overflow-hidden bg-black">
+      {p.video && inView ? (
+        <video
+          src={p.video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+        />
+      ) : (
+        <img
+          src={p.image}
+          alt={`${p.title} — preview`}
+          loading="lazy"
+          className="h-full w-full object-cover"
+        />
+      )}
+    </div>
+  );
+}
 
 export default function Work() {
   const [active, setActive] = useState<number | null>(null);
@@ -128,25 +160,7 @@ export default function Work() {
         {projects.map((p) => (
           <Reveal key={p.id}>
             <a href={p.href} className="block">
-              <div className="relative aspect-[4/3] overflow-hidden bg-black">
-                {p.video ? (
-                  <video
-                    src={p.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="h-full w-full object-cover"
-                  />
-                ) : (
-                  <img
-                    src={p.image}
-                    alt={`${p.title} — preview`}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                )}
-              </div>
+              <MobileCardMedia p={p} />
               <div className="mt-4 flex items-baseline justify-between gap-4">
                 <h3 className="font-display text-3xl leading-none tracking-tight">
                   {p.title}

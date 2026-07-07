@@ -44,7 +44,9 @@ export default function Skills() {
       <div className="overflow-hidden">
         <div className="marquee-track flex w-max">
           <Row items={hardSkills} />
-          <Row items={hardSkills} />
+          <span aria-hidden className="contents">
+            <Row items={hardSkills} />
+          </span>
         </div>
       </div>
 
@@ -52,7 +54,9 @@ export default function Skills() {
       <div className="mt-4 overflow-hidden md:mt-6">
         <div className="marquee-track-reverse flex w-max">
           <Row items={softSkills} />
-          <Row items={softSkills} />
+          <span aria-hidden className="contents">
+            <Row items={softSkills} />
+          </span>
         </div>
       </div>
     </section>
