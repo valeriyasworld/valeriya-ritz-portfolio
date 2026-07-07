@@ -128,7 +128,7 @@ export const about = {
       title: "M.A. Creative Direction",
       org: {
         label: "@Design PF",
-        href: "https://designpf.hs-pforzheim.de/macd",
+        href: "https://designpf.hs-pforzheim.de/en/macd",
       },
       dates: "expected oct 2026 – mar 2028",
       what: "Direction, concept, narrative and visual strategy — systems and stories, finally in one job description.",
@@ -225,7 +225,7 @@ export const projects: Project[] = [
     href: "/work/beehelp",
     detail: {
       tagline: "ASK • HELP • CONNECT",
-      caseVideo: null,
+      caseVideo: "https://www.youtube.com/watch?v=ubCjt1czuHE&t=3s",
       intro:
         "A neighborhood help app that makes asking for help as easy as offering it — a digital product with a playful visual language and a social purpose at its core.",
       sections: [
@@ -260,7 +260,7 @@ export const projects: Project[] = [
     href: "/work/femira",
     detail: {
       tagline: "HEALTH • DIGNITY • VOICE",
-      caseVideo: null,
+      caseVideo: "https://www.youtube.com/watch?v=dsNnbbcwZ4I",
       intro:
         "A sensitive and strategic design project around women's health — building a brand and campaign that speaks clearly about things people usually whisper about.",
       sections: [
