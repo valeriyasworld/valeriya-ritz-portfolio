@@ -210,6 +210,9 @@ export type Project = {
       media?: string[];
       layout?: string;
     }[];
+    /** Credits shown as "The Team" at the end of the page.
+     *  >>> check which projects were solo vs. with Elizaveta */
+    team: string[];
   };
 };
 
@@ -254,6 +257,7 @@ export const projects: Project[] = [
           ],
         },
       ],
+      team: ["Valeriya Ritz", "Elizaveta Berch"],
     },
   },
   {
@@ -292,6 +296,7 @@ export const projects: Project[] = [
           ],
         },
       ],
+      team: ["Valeriya Ritz", "Elizaveta Berch"],
     },
   },
   {
@@ -315,6 +320,7 @@ export const projects: Project[] = [
           body: "The film grows out of a text about being human among humans — the words set the rhythm, the images answer them.",
         },
       ],
+      team: ["Valeriya Ritz"],
     },
   },
   {
@@ -350,6 +356,7 @@ export const projects: Project[] = [
           media: ["ph"],
         },
       ],
+      team: ["Valeriya Ritz", "Elizaveta Berch"],
     },
   },
   {
@@ -363,28 +370,33 @@ export const projects: Project[] = [
     video: "/media/projects/morphosis.mp4",
     href: "/work/morphosis",
     detail: {
-      tagline: "TRANSFORMATION • IDENTITY • SYSTEM",
+      tagline: "MORPH • BLEED • REPEAT",
       caseVideo: "/media/projects/morphosis.mp4",
       intro:
-        "A visual system for a design exhibition, built around transformation and identity — one identity that keeps changing shape without losing itself.",
+        "The visual identity for the Werkschau 2026 — a design system built on transformation: organic forms, thermal ink-bleed and a name that morphed itself into place.",
       sections: [
         {
           heading: "The Concept",
-          body: "Morphosis treats identity as a process, not a logo: the system is defined by how it transforms, not how it stays the same.",
+          body: "Metamorphose became Morphose became Morph became Morphosis — the naming already did what the identity promises. Nothing here is fixed; everything is mid-transformation.",
+          media: ["/media/projects/morphosis/title.jpg"],
         },
         {
           heading: "The System",
-          body: "Type, grid and motion rules that bend across formats — poster, screen, space — while staying recognizably one thing.",
-          layout: "grid3",
-          media: ["ph", "ph", "ph"],
+          body: "Organic shapes, a thermal ink-bleed effect and typographic contrast form a system that never repeats itself: every poster mutates, yet everything stays unmistakably morphosis.",
+          layout: "full",
+          media: ["/media/projects/morphosis/posters.jpg"],
         },
         {
           heading: "The Exhibition",
-          body: "Applied across the Werkschau: signage, screens and printed matter that turn the venue into part of the identity.",
-          layout: "duo",
-          media: ["ph", "ph"],
+          body: "Applied across the venue and beyond — signage guiding through entrance, foyer and hall, a social presence and a landing page that make the transformation walkable, scrollable, visitable.",
+          layout: "duo-landscape",
+          media: [
+            "/media/projects/morphosis/signaletik.jpg",
+            "/media/projects/morphosis/social.jpg",
+          ],
         },
       ],
+      team: ["Valeriya Ritz", "Elizaveta Berch"],
     },
   },
   {
@@ -420,6 +432,7 @@ export const projects: Project[] = [
           media: ["ph", "ph"],
         },
       ],
+      team: ["Valeriya Ritz"],
     },
   },
   {
@@ -455,6 +468,7 @@ export const projects: Project[] = [
           media: ["ph", "ph", "ph"],
         },
       ],
+      team: ["Valeriya Ritz"],
     },
   },
 ];
