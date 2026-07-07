@@ -109,22 +109,33 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           )}
         </div>
 
-        {/* 3 — sections: label on top, big serif text, media beside/below */}
-        {detail.sections.map((section) => {
+        {/* 3 — sections: label on top, big serif text, media beside/below.
+               Single-image sections alternate sides: even = image right,
+               odd = image left (Hero does the same for variety). */}
+        {detail.sections.map((section, i) => {
           const media = section.media ?? [];
           const single = media.length === 1;
+          const imageLeft = single && i % 2 === 1;
           return (
             <section key={section.heading} className="mt-20 md:mt-28">
-              <span className="micro text-grey">{section.heading}</span>
               <div
-                className={`mt-6 ${
+                className={
                   single ? "grid gap-10 md:grid-cols-2 md:gap-16" : ""
-                }`}
+                }
               >
-                <p className="max-w-2xl font-display text-2xl leading-[1.12] tracking-tight md:text-4xl">
-                  {section.body}
-                </p>
-                {single && (
+                {imageLeft && (
+                  <Media
+                    src={media[0]}
+                    alt={`${project.title} — ${section.heading}`}
+                  />
+                )}
+                <div>
+                  <span className="micro text-grey">{section.heading}</span>
+                  <p className="mt-6 max-w-2xl font-display text-2xl leading-[1.12] tracking-tight md:text-4xl">
+                    {section.body}
+                  </p>
+                </div>
+                {single && !imageLeft && (
                   <Media
                     src={media[0]}
                     alt={`${project.title} — ${section.heading}`}
@@ -146,23 +157,40 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           );
         })}
 
-        {/* 4 — prev / next projects */}
+        {/* 4 — prev / next projects, Hero-style: hairlines above and below,
+               small preview thumbnail next to each big serif name */}
         <nav
           aria-label="More projects"
-          className="mt-24 flex items-baseline justify-between gap-6 md:mt-36"
+          className="mt-24 grid gap-2 border-y border-line py-10 md:mt-36 md:grid-cols-2 md:gap-10 md:py-14"
         >
-          <Link href={prev.href} className="group max-w-[45%]">
-            <span className="micro block text-grey">← Previous</span>
-            <span className="link-line mt-2 inline-block font-display text-2xl tracking-tight md:text-4xl">
-              {prev.title}
-            </span>
-          </Link>
-          <Link href={next.href} className="group max-w-[45%] text-right">
-            <span className="micro block text-grey">Next →</span>
-            <span className="link-line mt-2 inline-block font-display text-2xl tracking-tight md:text-4xl">
-              {next.title}
-            </span>
-          </Link>
+          {[prev, next].map((p, i) => (
+            <Link
+              key={p.id}
+              href={p.href}
+              className={`group flex items-center gap-6 ${
+                i === 1 ? "md:justify-end" : ""
+              }`}
+            >
+              {/* thumbnail only when a real asset exists */}
+              {p.image.startsWith("/media") && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={p.image}
+                  alt=""
+                  aria-hidden
+                  className="h-16 w-24 shrink-0 object-cover md:h-20 md:w-32"
+                />
+              )}
+              <span className="min-w-0">
+                <span className="micro block text-grey">
+                  {i === 0 ? "← Previous" : "Next →"}
+                </span>
+                <span className="link-line mt-1 inline-block font-display text-2xl leading-tight tracking-tight md:text-4xl">
+                  {p.title}
+                </span>
+              </span>
+            </Link>
+          ))}
         </nav>
       </article>
 
