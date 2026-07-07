@@ -16,7 +16,15 @@ import { Em, EASE, Reveal } from "./ui";
 
 type TimelineStep = (typeof about.timeline)[number];
 
-function TimelineEntry({ step }: { step: TimelineStep }) {
+function TimelineEntry({
+  step,
+  open,
+  onToggle,
+}: {
+  step: TimelineStep;
+  open: boolean;
+  onToggle: () => void;
+}) {
   const [hovered, setHovered] = useState(false);
   const [slide, setSlide] = useState(0);
   const hasMemories = step.memories.length > 0;
@@ -38,26 +46,45 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
 
   return (
     <li
-      className="relative py-10 first:pt-0 md:py-12"
+      className="relative py-5 md:py-6"
       onMouseEnter={() => {
         setHovered(true);
         setSlide(0);
       }}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative flex items-baseline justify-between gap-4">
-        <h3 className="font-display text-3xl tracking-tight md:text-4xl">
+      {/* collapsed row: title + period + plus — click to expand */}
+      <div
+        role="button"
+        tabIndex={0}
+        aria-expanded={open}
+        onClick={onToggle}
+        onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && onToggle()}
+        className="relative flex cursor-pointer items-baseline justify-between gap-4"
+      >
+        <h3 className="font-display text-2xl tracking-tight md:text-3xl">
           {step.title}{" "}
           <a
             href={step.org.href}
             target="_blank"
             rel="noreferrer"
             className="link-line"
+            onClick={(e) => e.stopPropagation()}
           >
             {step.org.label}
           </a>
         </h3>
-        <span className="micro shrink-0 text-grey">{step.period}</span>
+        <span className="flex shrink-0 items-baseline gap-4">
+          <span className="micro text-grey">{step.period}</span>
+          <span
+            aria-hidden
+            className={`inline-block text-xl leading-none transition-transform duration-500 ease-editorial ${
+              open ? "rotate-45" : ""
+            }`}
+          >
+            +
+          </span>
+        </span>
 
         {/* memory flashbacks — top-aligned with the heading, desktop only */}
         {hasMemories && (
@@ -91,9 +118,41 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
           </div>
         )}
       </div>
-      <p className="micro mt-3 text-grey">{step.dates}</p>
-      <p className="mt-3 text-sm text-grey md:text-base">{step.what}</p>
+      {/* expandable details */}
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.45, ease: [...EASE] }}
+            className="overflow-hidden"
+          >
+            <p className="micro mt-4 text-grey">{step.dates}</p>
+            <p className="mt-2 text-sm text-grey md:text-base">{step.what}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </li>
+  );
+}
+
+function TimelineAccordion() {
+  // one entry open at a time; the first starts open as an invitation
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  return (
+    <ol>
+      {about.timeline.map((step, i) => (
+        <Reveal key={step.title} delay={i * 0.05}>
+          <TimelineEntry
+            step={step}
+            open={openIndex === i}
+            onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+          />
+        </Reveal>
+      ))}
+    </ol>
   );
 }
 
@@ -119,15 +178,9 @@ export default function About() {
           </div>
         </div>
 
-        {/* timeline — each step ends with what it changed */}
+        {/* timeline as accordion — compact rows, click to expand */}
         <div className="md:col-span-6 md:col-start-7">
-          <ol>
-            {about.timeline.map((step, i) => (
-              <Reveal key={step.title} delay={i * 0.05}>
-                <TimelineEntry step={step} />
-              </Reveal>
-            ))}
-          </ol>
+          <TimelineAccordion />
         </div>
       </div>
     </section>
