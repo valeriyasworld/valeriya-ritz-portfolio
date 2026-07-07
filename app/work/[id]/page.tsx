@@ -251,6 +251,21 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           );
         })}
 
+        {/* credits */}
+        <section className="mt-20 md:mt-28">
+          <span className="micro text-grey">The Team</span>
+          <p className="mt-4 font-display text-2xl tracking-tight md:text-3xl">
+            {detail.team.map((name, i) => (
+              <span key={name}>
+                {name}
+                {i < detail.team.length - 1 && (
+                  <span className="text-grey"> · </span>
+                )}
+              </span>
+            ))}
+          </p>
+        </section>
+
         {/* 4 — prev / next projects, Hero-style: hairlines above and below,
                small preview thumbnail next to each big serif name */}
         <nav
