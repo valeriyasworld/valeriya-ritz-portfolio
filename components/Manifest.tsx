@@ -48,7 +48,7 @@ export default function Manifest() {
                 gap is identical on every slide while the statements stay
                 centered on one shared axis */}
             <div className="relative">
-              <span className="micro absolute bottom-full left-0 mb-7 text-white/40">
+              <span className="micro absolute bottom-full left-0 mb-7 text-white/60">
                 {String(i + 1).padStart(2, "0")} / {String(manifest.length).padStart(2, "0")}
               </span>
               <p className="statement !text-[clamp(1.9rem,5.5vw,5.2rem)] !leading-[1.02]">
@@ -63,7 +63,7 @@ export default function Manifest() {
 
       {/* controls */}
       <div className="mt-10 flex items-center justify-between px-5 md:mt-12 md:px-10">
-        <span className="micro text-white/40">
+        <span className="micro text-white/60">
           drag / scroll <span aria-hidden>→</span>
         </span>
         <div className="flex items-center gap-6">
@@ -74,14 +74,14 @@ export default function Manifest() {
           <button
             onClick={() => slideTo(-1)}
             aria-label="Previous statement"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 transition-colors hover:bg-white hover:text-black"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/50 transition-colors hover:bg-white hover:text-black"
           >
             ←
           </button>
           <button
             onClick={() => slideTo(1)}
             aria-label="Next statement"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 transition-colors hover:bg-white hover:text-black"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/50 transition-colors hover:bg-white hover:text-black"
           >
             →
           </button>

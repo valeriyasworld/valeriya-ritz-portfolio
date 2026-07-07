@@ -17,11 +17,14 @@ import { EASE } from "./ui";
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
-  // lock page scroll while the drawer is open
+  // lock page scroll while the drawer is open; Escape closes it
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
   }, [open]);
 
@@ -58,7 +61,7 @@ export default function Nav() {
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
-            className="pointer-events-auto flex h-10 w-10 flex-col items-center justify-center gap-[7px] md:hidden"
+            className="pointer-events-auto flex h-11 w-11 flex-col items-center justify-center gap-[7px] md:hidden"
           >
             <span className="block h-px w-7 bg-white" />
             <span className="block h-px w-7 bg-white" />
@@ -82,6 +85,9 @@ export default function Nav() {
 
             {/* panel sliding in from the right */}
             <motion.nav
+              role="dialog"
+              aria-modal="true"
+              aria-label="Navigation"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -92,7 +98,7 @@ export default function Nav() {
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close menu"
-                  className="flex h-10 w-10 items-center justify-center text-2xl"
+                  className="flex h-11 w-11 items-center justify-center text-2xl"
                 >
                   ×
                 </button>
