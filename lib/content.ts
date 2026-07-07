@@ -182,8 +182,21 @@ export type Project = {
   image: string;
   /** Optional: a video preview (muted loop) used instead of the image */
   video?: string;
-  /** Later this can point to a detail page, e.g. "/work/beehelp" */
+  /** Detail page route, e.g. "/work/beehelp" */
   href: string;
+  /**
+   * Detail page content (reference: herostudios.tv/work/mcdonalds):
+   * tagline under the title, intro paragraph, themed sections, and a
+   * media list rendered between sections (.mp4 -> video loop).
+   * >>> All copy below is a DRAFT for Valeriya to rewrite.
+   * >>> Replace placeholder() media with real assets in /media/projects/.
+   */
+  detail: {
+    tagline: string;
+    intro: string;
+    sections: { heading: string; body: string }[];
+    media: string[];
+  };
 };
 
 export const projects: Project[] = [
@@ -195,7 +208,31 @@ export const projects: Project[] = [
     description:
       "A neighborhood help app with a playful visual language and social purpose.",
     image: "/media/projects/beehelp.png",
-    href: "#work", // >>> later: "/work/beehelp"
+    href: "/work/beehelp",
+    detail: {
+      tagline: "ASK • HELP • CONNECT",
+      intro:
+        "A neighborhood help app that makes asking for help as easy as offering it — a digital product with a playful visual language and a social purpose at its core.",
+      sections: [
+        {
+          heading: "The Idea",
+          body: "Asking for help is hard — harder than offering it. Beehelp lowers that barrier: neighbors post small requests, others pick them up, and a neighborhood quietly becomes a network.",
+        },
+        {
+          heading: "The System",
+          body: "A friendly, rounded interface language with expressive icons and warm micro-interactions. Every screen is built from one system, so the app feels like one hand drew it.",
+        },
+        {
+          heading: "The Feeling",
+          body: "Helping should feel light, not bureaucratic. The tone, motion and illustration keep it human — closer to a favor between neighbors than a service transaction.",
+        },
+      ],
+      media: [
+        "/media/projects/beehelp.png",
+        placeholder("beehelp-detail-1", 1600, 1000),
+        placeholder("beehelp-detail-2", 1600, 1000),
+      ],
+    },
   },
   {
     id: "femira",
@@ -205,7 +242,31 @@ export const projects: Project[] = [
     description:
       "A sensitive and strategic design project around women's health and communication.",
     image: "/media/projects/femira.png",
-    href: "#work",
+    href: "/work/femira",
+    detail: {
+      tagline: "HEALTH • DIGNITY • VOICE",
+      intro:
+        "A sensitive and strategic design project around women's health — building a brand and campaign that speaks clearly about things people usually whisper about.",
+      sections: [
+        {
+          heading: "The Challenge",
+          body: "Women's health communication is either clinical or coy. Femira needed a voice that is direct without being cold, and warm without being cute.",
+        },
+        {
+          heading: "The Identity",
+          body: "A calm, confident visual system: honest typography, a grounded palette and imagery that treats its audience as adults.",
+        },
+        {
+          heading: "The Campaign",
+          body: "Digital-first storytelling that meets people where they are — social formats that inform, normalize and invite conversation.",
+        },
+      ],
+      media: [
+        "/media/projects/femira.png",
+        placeholder("femira-detail-1", 1600, 1000),
+        placeholder("femira-detail-2", 1600, 1000),
+      ],
+    },
   },
   {
     id: "human",
@@ -216,7 +277,30 @@ export const projects: Project[] = [
       "A small cinematic piece based on poetry, humanity and the feeling of being seen.",
     image: placeholder("human-film"),
     video: "/media/showreel.mp4",
-    href: "#work",
+    href: "/work/human",
+    detail: {
+      tagline: "POETRY • FILM • BEING SEEN",
+      intro:
+        "A small cinematic piece based on poetry, humanity and the feeling of being seen — a visual essay about what it means to notice and be noticed.",
+      sections: [
+        {
+          heading: "The Poem",
+          body: "The film grows out of a text about being human among humans — the words set the rhythm, the images answer them.",
+        },
+        {
+          heading: "The Images",
+          body: "Quiet, observational footage; faces, hands, light. Nothing staged louder than it needs to be.",
+        },
+        {
+          heading: "The Edit",
+          body: "Cut to breath rather than beat. The pacing leaves room for the viewer's own memories to surface — that's where the feeling lives.",
+        },
+      ],
+      media: [
+        "/media/showreel.mp4",
+        placeholder("human-detail-1", 1600, 1000),
+      ],
+    },
   },
   {
     id: "kerasilk",
@@ -226,7 +310,30 @@ export const projects: Project[] = [
     description:
       "Website redesign focused on digital experience, structure and visual refinement.",
     image: "/media/projects/kerasilk.png",
-    href: "#work",
+    href: "/work/kerasilk",
+    detail: {
+      tagline: "STRUCTURE • REFINEMENT • FLOW",
+      intro:
+        "A website redesign focused on digital experience, structure and visual refinement — bringing a premium haircare brand's digital presence up to the standard of its products.",
+      sections: [
+        {
+          heading: "The Status Quo",
+          body: "A strong brand with a website that undersold it: unclear structure, inconsistent visuals, friction where there should be flow.",
+        },
+        {
+          heading: "The Redesign",
+          body: "A clear information architecture, a calmer grid and typography that gives the products room to feel premium.",
+        },
+        {
+          heading: "The Details",
+          body: "Micro-interactions, image treatment and spacing tuned until browsing feels as smooth as the brand promises.",
+        },
+      ],
+      media: [
+        "/media/projects/kerasilk.png",
+        placeholder("kerasilk-detail-1", 1600, 1000),
+      ],
+    },
   },
   {
     id: "morphosis",
@@ -237,7 +344,30 @@ export const projects: Project[] = [
       "A visual system for a design exhibition, built around transformation and identity.",
     image: placeholder("morphosis"),
     video: "/media/projects/morphosis.mp4",
-    href: "#work",
+    href: "/work/morphosis",
+    detail: {
+      tagline: "TRANSFORMATION • IDENTITY • SYSTEM",
+      intro:
+        "A visual system for a design exhibition, built around transformation and identity — one identity that keeps changing shape without losing itself.",
+      sections: [
+        {
+          heading: "The Concept",
+          body: "Morphosis treats identity as a process, not a logo: the system is defined by how it transforms, not how it stays the same.",
+        },
+        {
+          heading: "The System",
+          body: "Type, grid and motion rules that bend across formats — poster, screen, space — while staying recognizably one thing.",
+        },
+        {
+          heading: "The Exhibition",
+          body: "Applied across the Werkschau: signage, screens and printed matter that turn the venue into part of the identity.",
+        },
+      ],
+      media: [
+        "/media/projects/morphosis.mp4",
+        placeholder("morphosis-detail-1", 1600, 1000),
+      ],
+    },
   },
   {
     id: "jardin",
@@ -247,7 +377,30 @@ export const projects: Project[] = [
     description:
       "A fictional website for a Crimean winery. A personal promise: if Crimea returns to Ukraine, I will design a real website for a winery there — for free.",
     image: "/media/projects/jardin.jpg",
-    href: "#work",
+    href: "/work/jardin",
+    detail: {
+      tagline: "WINE • MEMORY • PROMISE",
+      intro:
+        "A fictional website for a Crimean winery — and a personal promise: if Crimea returns to Ukraine, I will design a real website for a winery there, for free.",
+      sections: [
+        {
+          heading: "The Promise",
+          body: "Some projects are briefs, this one is a vow. Jardin de la Crimee imagines the digital presence of a winery that exists in memory and in the future at once.",
+        },
+        {
+          heading: "The Concept",
+          body: "Elegance with an ache: golden type on darkness, tastings by invitation, a place described so precisely you can almost visit it.",
+        },
+        {
+          heading: "The Design",
+          body: "Editorial layouts, warm materials and restrained motion — luxury that behaves like patience.",
+        },
+      ],
+      media: [
+        "/media/projects/jardin.jpg",
+        placeholder("jardin-detail-1", 1600, 1000),
+      ],
+    },
   },
   {
     id: "next-stop",
@@ -258,7 +411,30 @@ export const projects: Project[] = [
       "A film about metro systems in Ukraine and Germany, with a drone-like, observational aesthetic.",
     image: placeholder("next-stop"),
     video: "/media/projects/next-stop.mp4",
-    href: "#work",
+    href: "/work/next-stop",
+    detail: {
+      tagline: "METRO • UKRAINE • GERMANY",
+      intro:
+        "A film about metro systems in Ukraine and Germany — a drone-like, observational study of two countries seen through the spaces where everyone is just passing through.",
+      sections: [
+        {
+          heading: "The Observation",
+          body: "No interviews, no narration. The camera watches stations, trains and people the way a commuter does — half-awake, all-seeing.",
+        },
+        {
+          heading: "Two Systems",
+          body: "Kyiv's palatial depths against German functionalism: two infrastructures, two histories, one shared choreography of waiting and moving.",
+        },
+        {
+          heading: "The Aesthetic",
+          body: "Steady frames, long takes, ambient sound. The film trusts the places to speak — and they do.",
+        },
+      ],
+      media: [
+        "/media/projects/next-stop.mp4",
+        placeholder("next-stop-detail-1", 1600, 1000),
+      ],
+    },
   },
 ];
 
