@@ -15,6 +15,7 @@
 import Nav from "@/components/Nav";
 import Showreel from "@/components/Showreel";
 import Intro from "@/components/Intro";
+import PhotoStrip from "@/components/PhotoStrip";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Manifest from "@/components/Manifest";
@@ -27,6 +28,7 @@ export default function Home() {
       <Nav />
       <Showreel />
       <Intro />
+      <PhotoStrip />
       <About />
       <Skills />
       <Manifest />
