@@ -44,7 +44,8 @@ function TimelineEntry({ step }: { step: TimelineStep }) {
     >
       <div className="relative flex items-baseline justify-between gap-4">
         <h3 className="font-display text-3xl tracking-tight md:text-4xl">
-          {step.title}{" "}
+          {step.title}
+          <br />
           <a
             href={step.org.href}
             target="_blank"
