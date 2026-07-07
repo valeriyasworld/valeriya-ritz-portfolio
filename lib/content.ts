@@ -138,6 +138,25 @@ export const about = {
   ],
 };
 
+/* ---------------------------------------------------------- PHOTO STRIP -- */
+
+/**
+ * The slow film strip between intro and skills — a wordless, colorful
+ * break in all the typography. Mixes moments from everywhere; add or
+ * remove freely.
+ */
+export const stripImages = [
+  "/media/intro/intro-1.jpg",
+  "/media/memories/p_one_1.jpg",
+  "/media/trail/trail-1.webp",
+  "/media/memories/p_one_4.jpg",
+  "/media/intro/intro-3.jpg",
+  "/media/trail/trail-4.webp",
+  "/media/memories/p_one_2.jpg",
+  "/media/trail/trail-6.webp",
+  "/media/memories/p_one_5.jpg",
+];
+
 /* --------------------------------------------------------------- SKILLS -- */
 
 // Two marquees under About: hard skills glide left, soft skills glide

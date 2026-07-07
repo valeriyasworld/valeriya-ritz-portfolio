@@ -175,6 +175,10 @@ body {
 .marquee-track-reverse {
   animation: marquee 32s linear infinite reverse;
 }
+/* slower drift for the photo film strip */
+.marquee-slow {
+  animation: marquee 55s linear infinite;
+}
 
 /* Hide scrollbars on the manifest slider while keeping it scrollable */
 .no-scrollbar {
