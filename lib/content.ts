@@ -266,27 +266,30 @@ export const projects: Project[] = [
     image: "/media/projects/femira.png",
     href: "/work/femira",
     detail: {
-      tagline: "HEALTH • DIGNITY • VOICE",
+      tagline: "HEALTH • DATA • DIGNITY",
       caseVideo: "https://www.youtube.com/watch?v=dsNnbbcwZ4I",
       intro:
-        "A sensitive and strategic design project around women's health — building a brand and campaign that speaks clearly about things people usually whisper about.",
+        "Femira closes the gender data gap: a women's health companion built on women-specific data — a smart mirror, an app and a campaign that says out loud what medicine keeps overlooking.",
       sections: [
         {
           heading: "The Challenge",
-          body: "Women's health communication is either clinical or coy. Femira needed a voice that is direct without being cold, and warm without being cute.",
-          media: ["/media/projects/femira.png"],
+          body: "Standard medicine still treats the male body as the default — diagnoses, dosages and databases calibrated for men. Femira starts exactly where that standard fails.",
+          media: ["/media/projects/femira/billboard.jpg"],
         },
         {
-          heading: "The Identity",
-          body: "A calm, confident visual system: honest typography, a grounded palette and imagery that treats its audience as adults.",
-          layout: "duo",
-          media: ["ph", "ph"],
+          heading: "The Product",
+          body: "A smart mirror with a companion app: a one-minute check-in instead of daily tracking pressure, insights drawn from women-specific databases — knowledge at eye level, literally.",
+          layout: "full",
+          media: ["/media/projects/femira/mirror.jpg"],
         },
         {
           heading: "The Campaign",
-          body: "Digital-first storytelling that meets people where they are — social formats that inform, normalize and invite conversation.",
-          layout: "wide",
-          media: ["ph"],
+          body: "From station posters to car stickers, one message travels through the city: close the women's data gap. Loud in public, calm in the product.",
+          layout: "duo",
+          media: [
+            "/media/projects/femira/posters.jpg",
+            "/media/projects/femira/app.jpg",
+          ],
         },
       ],
     },
