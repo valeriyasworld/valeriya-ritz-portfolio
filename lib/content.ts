@@ -304,18 +304,6 @@ export const projects: Project[] = [
           heading: "The Poem",
           body: "The film grows out of a text about being human among humans — the words set the rhythm, the images answer them.",
         },
-        {
-          heading: "The Images",
-          body: "Quiet, observational footage; faces, hands, light. Nothing staged louder than it needs to be.",
-          layout: "wide",
-          media: ["ph"],
-        },
-        {
-          heading: "The Edit",
-          body: "Cut to breath rather than beat. The pacing leaves room for the viewer's own memories to surface — that's where the feeling lives.",
-          layout: "portrait-center",
-          media: ["ph"],
-        },
       ],
     },
   },
