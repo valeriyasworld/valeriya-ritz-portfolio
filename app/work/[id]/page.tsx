@@ -48,6 +48,70 @@ function Media({ src, alt }: { src: string; alt: string }) {
   return <img src={src} alt={alt} loading="lazy" className="w-full bg-black" />;
 }
 
+/**
+ * Section media layouts — every subpage arranges its images differently.
+ * "ph" entries render as quiet placeholder slots until real assets land.
+ */
+const LAYOUTS: Record<
+  string,
+  { wrap: string; tile: string; aspect: string }
+> = {
+  full: { wrap: "grid-cols-1", tile: "", aspect: "aspect-video" },
+  wide: { wrap: "grid-cols-1", tile: "", aspect: "aspect-[21/9]" },
+  grid3: { wrap: "grid-cols-2 sm:grid-cols-3", tile: "", aspect: "aspect-square" },
+  duo: { wrap: "grid-cols-2", tile: "", aspect: "aspect-[3/4]" },
+  "duo-landscape": { wrap: "grid-cols-2", tile: "", aspect: "aspect-[16/10]" },
+  asym: {
+    wrap: "md:grid-cols-3",
+    tile: "first:md:col-span-2",
+    aspect: "aspect-[4/3]",
+  },
+  "portrait-center": {
+    wrap: "grid-cols-1 justify-items-center",
+    tile: "w-full max-w-md",
+    aspect: "aspect-[3/4]",
+  },
+};
+
+function Tile({
+  src,
+  alt,
+  aspect,
+  className,
+}: {
+  src: string;
+  alt: string;
+  aspect: string;
+  className?: string;
+}) {
+  if (src === "ph") {
+    return (
+      <div
+        className={`flex ${aspect} items-center justify-center border border-line bg-[#F4F4F4] ${className ?? ""}`}
+      >
+        <span className="micro text-grey">( image )</span>
+      </div>
+    );
+  }
+  return (
+    <div className={`${aspect} overflow-hidden bg-black ${className ?? ""}`}>
+      {src.endsWith(".mp4") ? (
+        <video
+          src={src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+        />
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+      )}
+    </div>
+  );
+}
+
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const index = projects.findIndex((p) => p.id === params.id);
   if (index === -1) notFound();
@@ -114,13 +178,14 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                odd = image left (Hero does the same for variety). */}
         {detail.sections.map((section, i) => {
           const media = section.media ?? [];
-          const single = media.length === 1;
-          const imageLeft = single && i % 2 === 1;
+          const layout = section.layout ? LAYOUTS[section.layout] : null;
+          const beside = !layout && media.length === 1;
+          const imageLeft = beside && i % 2 === 1;
           return (
             <section key={section.heading} className="mt-20 md:mt-28">
               <div
                 className={
-                  single ? "grid gap-10 md:grid-cols-2 md:gap-16" : ""
+                  beside ? "grid gap-10 md:grid-cols-2 md:gap-16" : ""
                 }
               >
                 {imageLeft && (
@@ -135,20 +200,25 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                     {section.body}
                   </p>
                 </div>
-                {single && !imageLeft && (
+                {beside && !imageLeft && (
                   <Media
                     src={media[0]}
                     alt={`${project.title} — ${section.heading}`}
                   />
                 )}
               </div>
-              {media.length > 1 && (
-                <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
-                  {media.map((src) => (
-                    <Media
-                      key={src}
+              {/* layout-driven media arrangement — different on every page */}
+              {layout && media.length > 0 && (
+                <div
+                  className={`mt-12 grid gap-4 md:gap-6 ${layout.wrap}`}
+                >
+                  {media.map((src, j) => (
+                    <Tile
+                      key={`${section.heading}-${j}`}
                       src={src}
                       alt={`${project.title} — ${section.heading}`}
+                      aspect={layout.aspect}
+                      className={layout.tile}
                     />
                   ))}
                 </div>
