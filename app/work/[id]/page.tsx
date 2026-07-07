@@ -70,6 +70,8 @@ const LAYOUTS: Record<
   full: { wrap: "grid-cols-1", tile: "", aspect: "aspect-video" },
   wide: { wrap: "grid-cols-1", tile: "", aspect: "aspect-[21/9]" },
   grid3: { wrap: "grid-cols-2 sm:grid-cols-3", tile: "", aspect: "aspect-square" },
+  /* three phone screens side by side */
+  screens3: { wrap: "grid-cols-3", tile: "", aspect: "aspect-[9/19]" },
   duo: { wrap: "grid-cols-2", tile: "", aspect: "aspect-[3/4]" },
   "duo-landscape": { wrap: "grid-cols-2", tile: "", aspect: "aspect-[16/10]" },
   asym: {

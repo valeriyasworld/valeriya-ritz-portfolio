@@ -224,27 +224,34 @@ export const projects: Project[] = [
     image: "/media/projects/beehelp.png",
     href: "/work/beehelp",
     detail: {
-      tagline: "ASK • HELP • CONNECT",
+      tagline: "HELP • EARN • GROW",
       caseVideo: "https://www.youtube.com/watch?v=ubCjt1czuHE&t=3s",
       intro:
-        "A neighborhood help app that makes asking for help as easy as offering it — a digital product with a playful visual language and a social purpose at its core.",
+        "A neighborhood help app with a playful visual language and a serious social mechanic: every good deed earns honeycombs — and honeycombs turn into real projects for the neighborhood.",
       sections: [
         {
           heading: "The Idea",
-          body: "Asking for help is hard — harder than offering it. Beehelp lowers that barrier: neighbors post small requests, others pick them up, and a neighborhood quietly becomes a network.",
+          body: "Many people need help. Many want to help — they just don't know how. Beehelp connects both sides the way bees do: naturally, mutually, beneficial for everyone.",
           media: ["/media/projects/beehelp.png"],
         },
         {
-          heading: "The System",
-          body: "A friendly, rounded interface language with expressive icons and warm micro-interactions. Every screen is built from one system, so the app feels like one hand drew it.",
-          layout: "grid3",
-          media: ["ph", "ph", "ph"],
+          heading: "The App",
+          body: "You help, you earn honeycombs. Honeycombs become votes for ideas from the neighborhood — 150,000 of them and the city builds a new playground. Helping stops being charity and starts being infrastructure.",
+          layout: "screens3",
+          media: [
+            "/media/projects/beehelp/screen-home.png",
+            "/media/projects/beehelp/screen-beewall.png",
+            "/media/projects/beehelp/screen-helpmap.png",
+          ],
         },
         {
-          heading: "The Feeling",
-          body: "Helping should feel light, not bureaucratic. The tone, motion and illustration keep it human — closer to a favor between neighbors than a service transaction.",
-          layout: "full",
-          media: ["ph"],
+          heading: "The Campaign",
+          body: "A bee with attitude took over bus stops, construction fences and theatre walls — proof that help can begin anywhere. Shared under one hashtag: #beehelp.",
+          layout: "duo",
+          media: [
+            "/media/projects/beehelp/ooh-bus.jpg",
+            "/media/projects/beehelp/ooh-theater.jpg",
+          ],
         },
       ],
     },
