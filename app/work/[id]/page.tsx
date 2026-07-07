@@ -68,14 +68,16 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             className="h-11 w-auto md:h-12"
           />
         </Link>
-        <Link href="/#work" className="micro link-line">
-          ← Work
-        </Link>
       </header>
 
       <article className="mx-auto mt-16 max-w-5xl md:mt-24">
+        {/* back to the list — right above the title */}
+        <Link href="/#work" className="micro link-line">
+          ← Work
+        </Link>
+
         {/* title + tagline (Hero-style) */}
-        <h1 className="statement !text-[clamp(2.8rem,8vw,7.5rem)]">
+        <h1 className="statement mt-6 !text-[clamp(2.8rem,8vw,7.5rem)] md:mt-8">
           {project.title}
         </h1>
         <p className="micro mt-4 text-grey">{detail.tagline}</p>
