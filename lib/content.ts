@@ -194,8 +194,12 @@ export type Project = {
   detail: {
     tagline: string;
     intro: string;
-    sections: { heading: string; body: string }[];
-    media: string[];
+    /** Full-width case video under the intro. >>> Valeriya drops the file
+     *  into /media/projects/ and sets the path; null shows a placeholder. */
+    caseVideo: string | null;
+    /** Optional media under a section: 1 image = beside the text,
+     *  several = grid below it. */
+    sections: { heading: string; body: string; media?: string[] }[];
   };
 };
 
@@ -211,12 +215,14 @@ export const projects: Project[] = [
     href: "/work/beehelp",
     detail: {
       tagline: "ASK • HELP • CONNECT",
+      caseVideo: null,
       intro:
         "A neighborhood help app that makes asking for help as easy as offering it — a digital product with a playful visual language and a social purpose at its core.",
       sections: [
         {
           heading: "The Idea",
           body: "Asking for help is hard — harder than offering it. Beehelp lowers that barrier: neighbors post small requests, others pick them up, and a neighborhood quietly becomes a network.",
+          media: ["/media/projects/beehelp.png"],
         },
         {
           heading: "The System",
@@ -226,11 +232,6 @@ export const projects: Project[] = [
           heading: "The Feeling",
           body: "Helping should feel light, not bureaucratic. The tone, motion and illustration keep it human — closer to a favor between neighbors than a service transaction.",
         },
-      ],
-      media: [
-        "/media/projects/beehelp.png",
-        placeholder("beehelp-detail-1", 1600, 1000),
-        placeholder("beehelp-detail-2", 1600, 1000),
       ],
     },
   },
@@ -245,12 +246,14 @@ export const projects: Project[] = [
     href: "/work/femira",
     detail: {
       tagline: "HEALTH • DIGNITY • VOICE",
+      caseVideo: null,
       intro:
         "A sensitive and strategic design project around women's health — building a brand and campaign that speaks clearly about things people usually whisper about.",
       sections: [
         {
           heading: "The Challenge",
           body: "Women's health communication is either clinical or coy. Femira needed a voice that is direct without being cold, and warm without being cute.",
+          media: ["/media/projects/femira.png"],
         },
         {
           heading: "The Identity",
@@ -260,11 +263,6 @@ export const projects: Project[] = [
           heading: "The Campaign",
           body: "Digital-first storytelling that meets people where they are — social formats that inform, normalize and invite conversation.",
         },
-      ],
-      media: [
-        "/media/projects/femira.png",
-        placeholder("femira-detail-1", 1600, 1000),
-        placeholder("femira-detail-2", 1600, 1000),
       ],
     },
   },
@@ -280,6 +278,7 @@ export const projects: Project[] = [
     href: "/work/human",
     detail: {
       tagline: "POETRY • FILM • BEING SEEN",
+      caseVideo: "/media/showreel.mp4",
       intro:
         "A small cinematic piece based on poetry, humanity and the feeling of being seen — a visual essay about what it means to notice and be noticed.",
       sections: [
@@ -296,10 +295,6 @@ export const projects: Project[] = [
           body: "Cut to breath rather than beat. The pacing leaves room for the viewer's own memories to surface — that's where the feeling lives.",
         },
       ],
-      media: [
-        "/media/showreel.mp4",
-        placeholder("human-detail-1", 1600, 1000),
-      ],
     },
   },
   {
@@ -313,12 +308,14 @@ export const projects: Project[] = [
     href: "/work/kerasilk",
     detail: {
       tagline: "STRUCTURE • REFINEMENT • FLOW",
+      caseVideo: null,
       intro:
         "A website redesign focused on digital experience, structure and visual refinement — bringing a premium haircare brand's digital presence up to the standard of its products.",
       sections: [
         {
           heading: "The Status Quo",
           body: "A strong brand with a website that undersold it: unclear structure, inconsistent visuals, friction where there should be flow.",
+          media: ["/media/projects/kerasilk.png"],
         },
         {
           heading: "The Redesign",
@@ -328,10 +325,6 @@ export const projects: Project[] = [
           heading: "The Details",
           body: "Micro-interactions, image treatment and spacing tuned until browsing feels as smooth as the brand promises.",
         },
-      ],
-      media: [
-        "/media/projects/kerasilk.png",
-        placeholder("kerasilk-detail-1", 1600, 1000),
       ],
     },
   },
@@ -347,6 +340,7 @@ export const projects: Project[] = [
     href: "/work/morphosis",
     detail: {
       tagline: "TRANSFORMATION • IDENTITY • SYSTEM",
+      caseVideo: "/media/projects/morphosis.mp4",
       intro:
         "A visual system for a design exhibition, built around transformation and identity — one identity that keeps changing shape without losing itself.",
       sections: [
@@ -363,10 +357,6 @@ export const projects: Project[] = [
           body: "Applied across the Werkschau: signage, screens and printed matter that turn the venue into part of the identity.",
         },
       ],
-      media: [
-        "/media/projects/morphosis.mp4",
-        placeholder("morphosis-detail-1", 1600, 1000),
-      ],
     },
   },
   {
@@ -380,12 +370,14 @@ export const projects: Project[] = [
     href: "/work/jardin",
     detail: {
       tagline: "WINE • MEMORY • PROMISE",
+      caseVideo: null,
       intro:
         "A fictional website for a Crimean winery — and a personal promise: if Crimea returns to Ukraine, I will design a real website for a winery there, for free.",
       sections: [
         {
           heading: "The Promise",
           body: "Some projects are briefs, this one is a vow. Jardin de la Crimee imagines the digital presence of a winery that exists in memory and in the future at once.",
+          media: ["/media/projects/jardin.jpg"],
         },
         {
           heading: "The Concept",
@@ -395,10 +387,6 @@ export const projects: Project[] = [
           heading: "The Design",
           body: "Editorial layouts, warm materials and restrained motion — luxury that behaves like patience.",
         },
-      ],
-      media: [
-        "/media/projects/jardin.jpg",
-        placeholder("jardin-detail-1", 1600, 1000),
       ],
     },
   },
@@ -414,6 +402,7 @@ export const projects: Project[] = [
     href: "/work/next-stop",
     detail: {
       tagline: "METRO • UKRAINE • GERMANY",
+      caseVideo: "/media/projects/next-stop.mp4",
       intro:
         "A film about metro systems in Ukraine and Germany — a drone-like, observational study of two countries seen through the spaces where everyone is just passing through.",
       sections: [
@@ -429,10 +418,6 @@ export const projects: Project[] = [
           heading: "The Aesthetic",
           body: "Steady frames, long takes, ambient sound. The film trusts the places to speak — and they do.",
         },
-      ],
-      media: [
-        "/media/projects/next-stop.mp4",
-        placeholder("next-stop-detail-1", 1600, 1000),
       ],
     },
   },

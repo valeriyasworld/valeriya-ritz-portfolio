@@ -5,10 +5,12 @@ import { projects } from "@/lib/content";
 
 /**
  * /work/[id] — PROJECT DETAIL PAGE
- * Structural reference: herostudios.tv/work/mcdonalds —
- * title + tagline, intro paragraph, themed sections with large media
- * in between, prev/next project navigation, mini footer.
- * All content comes from each project's `detail` block in lib/content.ts.
+ * Layout copied from herostudios.tv/work/mcdonalds:
+ *   1. Title left — tagline + big serif intro right
+ *   2. Full-width case video (placeholder frame until Valeriya adds it)
+ *   3. Sections: micro label on top, big serif paragraph; one image sits
+ *      beside the text, several images form a grid below it
+ *   4. Prev/next projects, mini footer
  */
 
 export function generateStaticParams() {
@@ -54,11 +56,10 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   const { detail } = project;
   const prev = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
-  const [heroMedia, ...restMedia] = detail.media;
 
   return (
     <main className="min-h-screen bg-white px-5 pb-24 pt-6 md:px-10">
-      {/* minimal header: signature = back home, direct way back to the list */}
+      {/* minimal header: signature = back home */}
       <header className="flex items-center justify-between">
         <Link href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -70,51 +71,82 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </Link>
       </header>
 
-      <article className="mx-auto mt-16 max-w-5xl md:mt-24">
-        {/* back to the list — right above the title */}
+      <article className="mt-16 md:mt-24">
         <Link href="/#work" className="micro link-line">
           ← Work
         </Link>
 
-        {/* title + tagline (Hero-style) */}
-        <h1 className="statement mt-6 !text-[clamp(2.8rem,8vw,7.5rem)] md:mt-8">
-          {project.title}
-        </h1>
-        <p className="micro mt-4 text-grey">{detail.tagline}</p>
-
-        {/* intro */}
-        <p className="mt-12 max-w-3xl text-lg leading-relaxed md:mt-16 md:text-2xl">
-          {detail.intro}
-        </p>
-
-        {/* hero media */}
-        <div className="mt-14 md:mt-20">
-          <Media src={heroMedia} alt={`${project.title} — cover`} />
+        {/* 1 — title left, tagline + big serif intro right (Hero layout) */}
+        <div className="mt-6 grid gap-10 md:mt-8 md:grid-cols-2 md:gap-16">
+          <h1 className="statement !text-[clamp(2.8rem,6.5vw,6.5rem)]">
+            {project.title}
+          </h1>
+          <div>
+            <p className="micro text-grey">{detail.tagline}</p>
+            <p className="mt-6 font-display text-2xl leading-[1.12] tracking-tight md:text-4xl">
+              {detail.intro}
+            </p>
+          </div>
         </div>
 
-        {/* themed sections, large media woven in between */}
-        {detail.sections.map((section, i) => (
-          <section key={section.heading} className="mt-16 md:mt-24">
-            <div className="grid gap-6 md:grid-cols-12">
-              <h2 className="font-display text-3xl tracking-tight md:col-span-4 md:text-4xl">
-                {section.heading}
-              </h2>
-              <p className="text-base leading-relaxed text-grey md:col-span-7 md:col-start-6 md:text-lg">
-                {section.body}
-              </p>
+        {/* 2 — full-width case video */}
+        <div className="mt-16 md:mt-24">
+          {detail.caseVideo ? (
+            <video
+              src={detail.caseVideo}
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full bg-black"
+            />
+          ) : (
+            /* >>> placeholder until the case video lands in /media/projects/ */
+            <div className="flex aspect-video w-full items-center justify-center border border-line bg-black">
+              <span className="micro text-white/60">
+                Case video — coming soon
+              </span>
             </div>
-            {restMedia[i] && (
-              <div className="mt-14 md:mt-20">
-                <Media
-                  src={restMedia[i]}
-                  alt={`${project.title} — ${section.heading}`}
-                />
-              </div>
-            )}
-          </section>
-        ))}
+          )}
+        </div>
 
-        {/* prev / next projects */}
+        {/* 3 — sections: label on top, big serif text, media beside/below */}
+        {detail.sections.map((section) => {
+          const media = section.media ?? [];
+          const single = media.length === 1;
+          return (
+            <section key={section.heading} className="mt-20 md:mt-28">
+              <span className="micro text-grey">{section.heading}</span>
+              <div
+                className={`mt-6 ${
+                  single ? "grid gap-10 md:grid-cols-2 md:gap-16" : ""
+                }`}
+              >
+                <p className="max-w-2xl font-display text-2xl leading-[1.12] tracking-tight md:text-4xl">
+                  {section.body}
+                </p>
+                {single && (
+                  <Media
+                    src={media[0]}
+                    alt={`${project.title} — ${section.heading}`}
+                  />
+                )}
+              </div>
+              {media.length > 1 && (
+                <div className="mt-12 grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+                  {media.map((src) => (
+                    <Media
+                      key={src}
+                      src={src}
+                      alt={`${project.title} — ${section.heading}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </section>
+          );
+        })}
+
+        {/* 4 — prev / next projects */}
         <nav
           aria-label="More projects"
           className="mt-24 flex items-baseline justify-between gap-6 md:mt-36"
