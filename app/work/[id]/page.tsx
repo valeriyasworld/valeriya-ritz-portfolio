@@ -30,6 +30,17 @@ export function generateMetadata({
   };
 }
 
+/** Parse a YouTube watch/short URL into a privacy-friendly embed URL
+ *  (keeps a &t=/start timestamp if present); null for non-YouTube. */
+function youTubeEmbed(url: string): string | null {
+  const id = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/);
+  if (!id) return null;
+  const start = url.match(/[?&]t=(\d+)/);
+  return `https://www.youtube-nocookie.com/embed/${id[1]}${
+    start ? `?start=${start[1]}` : ""
+  }`;
+}
+
 /** .mp4 renders as a muted loop, everything else as an image */
 function Media({ src, alt }: { src: string; alt: string }) {
   if (src.endsWith(".mp4")) {
@@ -153,9 +164,20 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
           </div>
         </div>
 
-        {/* 2 — full-width case video */}
+        {/* 2 — full-width case video (YouTube link or local file) */}
         <div className="mt-16 md:mt-24">
-          {detail.caseVideo ? (
+          {detail.caseVideo && youTubeEmbed(detail.caseVideo) ? (
+            <div className="aspect-video w-full bg-black">
+              <iframe
+                src={youTubeEmbed(detail.caseVideo)!}
+                title={`${project.title} — case video`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+                className="h-full w-full"
+              />
+            </div>
+          ) : detail.caseVideo ? (
             <video
               src={detail.caseVideo}
               controls
