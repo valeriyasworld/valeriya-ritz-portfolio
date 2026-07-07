@@ -197,9 +197,19 @@ export type Project = {
     /** Full-width case video under the intro. >>> Valeriya drops the file
      *  into /media/projects/ and sets the path; null shows a placeholder. */
     caseVideo: string | null;
-    /** Optional media under a section: 1 image = beside the text,
-     *  several = grid below it. */
-    sections: { heading: string; body: string; media?: string[] }[];
+    /**
+     * Optional media under a section: 1 image = beside the text,
+     * several = grid below it. "ph" entries render as designed
+     * placeholder slots (>>> swap for real paths when images arrive).
+     * `layout` picks the arrangement: full | wide | grid3 | duo |
+     * duo-landscape | asym | portrait-center
+     */
+    sections: {
+      heading: string;
+      body: string;
+      media?: string[];
+      layout?: string;
+    }[];
   };
 };
 
@@ -227,10 +237,14 @@ export const projects: Project[] = [
         {
           heading: "The System",
           body: "A friendly, rounded interface language with expressive icons and warm micro-interactions. Every screen is built from one system, so the app feels like one hand drew it.",
+          layout: "grid3",
+          media: ["ph", "ph", "ph"],
         },
         {
           heading: "The Feeling",
           body: "Helping should feel light, not bureaucratic. The tone, motion and illustration keep it human — closer to a favor between neighbors than a service transaction.",
+          layout: "full",
+          media: ["ph"],
         },
       ],
     },
@@ -258,10 +272,14 @@ export const projects: Project[] = [
         {
           heading: "The Identity",
           body: "A calm, confident visual system: honest typography, a grounded palette and imagery that treats its audience as adults.",
+          layout: "duo",
+          media: ["ph", "ph"],
         },
         {
           heading: "The Campaign",
           body: "Digital-first storytelling that meets people where they are — social formats that inform, normalize and invite conversation.",
+          layout: "wide",
+          media: ["ph"],
         },
       ],
     },
@@ -289,10 +307,14 @@ export const projects: Project[] = [
         {
           heading: "The Images",
           body: "Quiet, observational footage; faces, hands, light. Nothing staged louder than it needs to be.",
+          layout: "wide",
+          media: ["ph"],
         },
         {
           heading: "The Edit",
           body: "Cut to breath rather than beat. The pacing leaves room for the viewer's own memories to surface — that's where the feeling lives.",
+          layout: "portrait-center",
+          media: ["ph"],
         },
       ],
     },
@@ -320,10 +342,14 @@ export const projects: Project[] = [
         {
           heading: "The Redesign",
           body: "A clear information architecture, a calmer grid and typography that gives the products room to feel premium.",
+          layout: "asym",
+          media: ["ph", "ph"],
         },
         {
           heading: "The Details",
           body: "Micro-interactions, image treatment and spacing tuned until browsing feels as smooth as the brand promises.",
+          layout: "full",
+          media: ["ph"],
         },
       ],
     },
@@ -351,10 +377,14 @@ export const projects: Project[] = [
         {
           heading: "The System",
           body: "Type, grid and motion rules that bend across formats — poster, screen, space — while staying recognizably one thing.",
+          layout: "grid3",
+          media: ["ph", "ph", "ph"],
         },
         {
           heading: "The Exhibition",
           body: "Applied across the Werkschau: signage, screens and printed matter that turn the venue into part of the identity.",
+          layout: "duo",
+          media: ["ph", "ph"],
         },
       ],
     },
@@ -382,10 +412,14 @@ export const projects: Project[] = [
         {
           heading: "The Concept",
           body: "Elegance with an ache: golden type on darkness, tastings by invitation, a place described so precisely you can almost visit it.",
+          layout: "portrait-center",
+          media: ["ph"],
         },
         {
           heading: "The Design",
           body: "Editorial layouts, warm materials and restrained motion — luxury that behaves like patience.",
+          layout: "duo-landscape",
+          media: ["ph", "ph"],
         },
       ],
     },
@@ -413,10 +447,14 @@ export const projects: Project[] = [
         {
           heading: "Two Systems",
           body: "Kyiv's palatial depths against German functionalism: two infrastructures, two histories, one shared choreography of waiting and moving.",
+          layout: "wide",
+          media: ["ph"],
         },
         {
           heading: "The Aesthetic",
           body: "Steady frames, long takes, ambient sound. The film trusts the places to speak — and they do.",
+          layout: "grid3",
+          media: ["ph", "ph", "ph"],
         },
       ],
     },
