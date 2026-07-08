@@ -84,12 +84,15 @@ export function MaskReveal({
   className?: string;
 }) {
   return (
-    <span className={`block overflow-hidden ${className ?? ""}`}>
+    // pb/-mb keep descenders (y, g) from being cropped by the mask
+    <span
+      className={`-mb-[0.15em] block overflow-hidden pb-[0.15em] ${className ?? ""}`}
+    >
       <motion.span
         className="block"
         initial={{ y: "115%" }}
-        whileInView={{ y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
+        whileInView={{ y: "0%" }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.9, delay, ease: [...EASE] }}
       >
         {children}
