@@ -36,6 +36,68 @@ export function Em({ text }: { text: string }) {
   );
 }
 
+/**
+ * Parallax drift: the child glides slightly slower than the page while
+ * scrolling through the viewport. Wrap media in an overflow-hidden box;
+ * the inner content is scaled up a touch so no edges ever show.
+ */
+export function Parallax({
+  children,
+  amount = 7,
+  className,
+}: {
+  children: React.ReactNode;
+  /** drift strength in % of element height */
+  amount?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [`-${amount}%`, `${amount}%`]
+  );
+  return (
+    <div ref={ref} className={`overflow-hidden ${className ?? ""}`}>
+      <motion.div style={{ y }} className="h-full w-full scale-[1.16]">
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+/**
+ * Editorial mask reveal: the text slides up out of an invisible clip,
+ * like theshift.tokyo headlines. Use for display-size type.
+ */
+export function MaskReveal({
+  children,
+  delay = 0,
+  className,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <span className={`block overflow-hidden ${className ?? ""}`}>
+      <motion.span
+        className="block"
+        initial={{ y: "115%" }}
+        whileInView={{ y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.9, delay, ease: [...EASE] }}
+      >
+        {children}
+      </motion.span>
+    </span>
+  );
+}
+
 /** Fade-up once when the element scrolls into view. */
 export function Reveal({
   children,

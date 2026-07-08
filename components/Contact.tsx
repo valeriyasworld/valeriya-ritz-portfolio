@@ -9,7 +9,7 @@
 
 import { contact } from "@/lib/content";
 import ImageTrail from "./ImageTrail";
-import { Reveal } from "./ui";
+import { MaskReveal, Reveal } from "./ui";
 
 export default function Contact() {
   return (
@@ -17,13 +17,13 @@ export default function Contact() {
       <ImageTrail>
       {/* the sign */}
       <div className="text-center">
-        <Reveal>
-          <h2 className="sign">
-            {contact.signLines[0]}
-            <br />
+        {/* the two lines slide up out of an invisible mask, staggered */}
+        <h2 className="sign">
+          <MaskReveal>{contact.signLines[0]}</MaskReveal>
+          <MaskReveal delay={0.12}>
             <em className="serif font-light">{contact.signLines[1]}</em>
-          </h2>
-        </Reveal>
+          </MaskReveal>
+        </h2>
 
         <Reveal delay={0.15} className="mx-auto mt-10 max-w-md md:mt-14">
           {contact.sub.map((line, i) => (

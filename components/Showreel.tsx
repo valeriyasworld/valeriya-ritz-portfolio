@@ -10,13 +10,23 @@
  * The designed placeholder below disappears automatically.
  */
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { showreel } from "@/lib/content";
 import { EASE } from "./ui";
 
 export default function Showreel() {
+  const ref = useRef<HTMLElement>(null);
+  // hero parallax: the reel drifts slower than the page while scrolling away
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  const reelY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+
   return (
     <section
+      ref={ref}
       id="showreel"
       className="relative flex h-[100svh] flex-col justify-between overflow-hidden bg-black text-white"
     >
@@ -24,7 +34,8 @@ export default function Showreel() {
       <h1 className="sr-only">Valeriya Ritz — Portfolio 2026</h1>
       {/* ---- reel layer ---------------------------------------------------- */}
       {showreel.videoSrc ? (
-        <video
+        <motion.video
+          style={{ y: reelY }}
           className="absolute inset-0 h-full w-full object-cover"
           src={showreel.videoSrc}
           poster={showreel.posterSrc ?? undefined}

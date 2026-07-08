@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/lib/content";
+import { Media, Tile } from "@/components/DetailMedia";
 
 /**
  * /work/[id] — PROJECT DETAIL PAGE
@@ -41,23 +42,6 @@ function youTubeEmbed(url: string): string | null {
   }`;
 }
 
-/** .mp4 renders as a muted loop, everything else as an image */
-function Media({ src, alt }: { src: string; alt: string }) {
-  if (src.endsWith(".mp4")) {
-    return (
-      <video
-        src={src}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-full bg-black"
-      />
-    );
-  }
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={src} alt={alt} loading="lazy" className="w-full bg-black" />;
-}
 
 /**
  * Section media layouts — every subpage arranges its images differently.
@@ -86,44 +70,6 @@ const LAYOUTS: Record<
   },
 };
 
-function Tile({
-  src,
-  alt,
-  aspect,
-  className,
-}: {
-  src: string;
-  alt: string;
-  aspect: string;
-  className?: string;
-}) {
-  if (src === "ph") {
-    return (
-      <div
-        className={`flex ${aspect} items-center justify-center border border-line bg-[#F4F4F4] ${className ?? ""}`}
-      >
-        <span className="micro text-grey">( image )</span>
-      </div>
-    );
-  }
-  return (
-    <div className={`${aspect} overflow-hidden bg-black ${className ?? ""}`}>
-      {src.endsWith(".mp4") ? (
-        <video
-          src={src}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="h-full w-full object-cover"
-        />
-      ) : (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
-      )}
-    </div>
-  );
-}
 
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const index = projects.findIndex((p) => p.id === params.id);
