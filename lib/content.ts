@@ -234,7 +234,7 @@ export const projects: Project[] = [
       sections: [
         {
           heading: "The Idea",
-          body: "Many people need help. Many want to help — they just don't know how. Beehelp connects both sides the way bees do: naturally, mutually, beneficial for everyone.",
+          body: "Many people need help. Many want to help — they just don't know how. Beehelp connects both sides the way bees do: naturally, mutually, beeneficial for everyone.",
           media: ["/media/projects/beehelp.png"],
         },
         {
@@ -441,34 +441,35 @@ export const projects: Project[] = [
     category: "Short Film / Experimental Video",
     year: "2025",
     description:
-      "A film about metro systems in Ukraine and Germany, with a drone-like, observational aesthetic.",
+      "An immersive short film: a man falls asleep on a German subway — and wakes up in a Kyiv metro station that has become a shelter.",
     image: placeholder("next-stop"),
     video: "/media/projects/next-stop.mp4",
     href: "/work/next-stop",
     detail: {
-      tagline: "METRO • UKRAINE • GERMANY",
-      caseVideo: "/media/projects/next-stop.mp4",
+      tagline: "YOU NEVER KNOW WHERE IT ENDS NEXT",
+      caseVideo: "/media/projects/next-stop-film.mp4",
       intro:
-        "A film about metro systems in Ukraine and Germany — a drone-like, observational study of two countries seen through the spaces where everyone is just passing through.",
+        "An immersive short film about comfort and displacement: a young man falls asleep on a German subway — and wakes up in a Kyiv metro station that is no longer a station, but a shelter.",
       sections: [
         {
-          heading: "The Observation",
-          body: "No interviews, no narration. The camera watches stations, trains and people the way a commuter does — half-awake, all-seeing.",
+          heading: "The Story",
+          body: "First-person, at night: people sleeping on cardboard, children between suitcases. Red targeting lines settle over them — names, ages, fates, like a drone's HUD. 'Galyna, 40, will die in 3 days.' Then he wakes up. The scenes stay the same. Only the effects are gone.",
+          media: ["/media/projects/next-stop/ubahn.jpg"],
         },
         {
-          heading: "Two Systems",
-          body: "Kyiv's palatial depths against German functionalism: two infrastructures, two histories, one shared choreography of waiting and moving.",
-          layout: "wide",
-          media: ["ph"],
+          heading: "The Look",
+          body: "The Kyiv scenes are built entirely from a 3D point cloud — black and white, cold, distanced, as if filmed by a drone. People become tracked objects: not Mykola or Olena anymore, just coordinates.",
+          layout: "full",
+          media: ["/media/projects/next-stop/kyiv.jpg"],
         },
         {
-          heading: "The Aesthetic",
-          body: "Steady frames, long takes, ambient sound. The film trusts the places to speak — and they do.",
-          layout: "grid3",
-          media: ["ph", "ph", "ph"],
+          heading: "The Why",
+          body: "We no longer live with media — we live in media. The war in Ukraine is the first conflict transmitted through TikTok, drones and live feeds. Everything we know about war, we know through images. This film asks what happens when the viewer becomes part of the footage.",
+          layout: "full",
+          media: ["/media/projects/next-stop/title.jpg"],
         },
       ],
-      team: ["Valeriya Ritz"],
+      team: ["Valeriya Ritz", "Elizaveta Berch"],
     },
   },
 ];
