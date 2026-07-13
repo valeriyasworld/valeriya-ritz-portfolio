@@ -7,6 +7,7 @@
 import { useRef } from "react";
 import {
   motion,
+  useInView,
   useScroll,
   useTransform,
   type MotionValue,
@@ -83,16 +84,21 @@ export function MaskReveal({
   delay?: number;
   className?: string;
 }) {
+  // IMPORTANT: observe the (untransformed) mask, not the text inside it —
+  // the text starts fully clipped by overflow-hidden, and IntersectionObserver
+  // never reports clipped elements as visible.
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.3 });
   return (
     // pb/-mb keep descenders (y, g) from being cropped by the mask
     <span
+      ref={ref}
       className={`-mb-[0.15em] block overflow-hidden pb-[0.15em] ${className ?? ""}`}
     >
       <motion.span
         className="block"
         initial={{ y: "115%" }}
-        whileInView={{ y: "0%" }}
-        viewport={{ once: true, amount: 0.2 }}
+        animate={inView ? { y: "0%" } : { y: "115%" }}
         transition={{ duration: 0.9, delay, ease: [...EASE] }}
       >
         {children}
