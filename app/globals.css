@@ -97,6 +97,16 @@ body {
   overflow-x: hidden;
 }
 
+/* Custom star cursor (Valeriya's hand-drawn star).
+   File: /public/media/cursor-star.png (32x32). Browsers fall back to the
+   native cursor automatically while the file is missing. */
+body,
+a,
+button,
+[role="button"] {
+  cursor: url("/media/cursor-star.png") 6 6, auto;
+}
+
 /* ======================================================= TYPE SCALE ==== */
 
 /* Big editorial statements — Nyght, sentence case, cinematic */
