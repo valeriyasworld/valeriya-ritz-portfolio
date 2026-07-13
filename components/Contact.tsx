@@ -21,7 +21,7 @@ export default function Contact() {
         <h2 className="sign">
           <MaskReveal>{contact.signLines[0]}</MaskReveal>
           {/* pulled up: the two masked lines sit tight like one headline */}
-          <MaskReveal delay={0.12} className="-mt-[0.22em]">
+          <MaskReveal delay={0.12} className="-mt-[0.42em]">
             <em className="serif font-light">{contact.signLines[1]}</em>
           </MaskReveal>
         </h2>
