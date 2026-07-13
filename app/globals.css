@@ -98,13 +98,21 @@ body {
 }
 
 /* Custom star cursor (Valeriya's hand-drawn star).
-   File: /public/media/cursor-star.png (48x48). Browsers fall back to the
-   native cursor automatically while the file is missing. */
+   Small 48px version via CSS as a baseline / no-JS fallback. When the
+   JS StarCursor mounts (fine pointers only) it hides the native cursor
+   and renders a larger star that follows with easing. */
 body,
 a,
 button,
 [role="button"] {
   cursor: url("/media/cursor-star.png") 22 20, auto;
+}
+html.star-cursor-active,
+html.star-cursor-active body,
+html.star-cursor-active a,
+html.star-cursor-active button,
+html.star-cursor-active [role="button"] {
+  cursor: none;
 }
 
 /* ======================================================= TYPE SCALE ==== */

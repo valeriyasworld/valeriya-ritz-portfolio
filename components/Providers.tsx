@@ -8,6 +8,7 @@
 
 import { MotionConfig } from "framer-motion";
 import SmoothScroll from "./SmoothScroll";
+import StarCursor from "./StarCursor";
 
 export default function Providers({
   children,
@@ -16,6 +17,7 @@ export default function Providers({
 }) {
   return (
     <MotionConfig reducedMotion="user">
+      <StarCursor />
       <SmoothScroll>{children}</SmoothScroll>
     </MotionConfig>
   );
