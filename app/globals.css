@@ -49,27 +49,10 @@
   font-style: italic;
   font-display: swap;
 }
-@font-face {
-  font-family: "Aeonik";
-  src: url("/fonts/Aeonik-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Aeonik";
-  src: url("/fonts/Aeonik-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Aeonik";
-  src: url("/fonts/Aeonik-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* Body font: Inter Tight (Google Fonts, OFL — loaded in layout.tsx).
+   Aeonik was removed 2026-07: no license. If a CoType web license is
+   bought later, re-add the @font-face here and put "Aeonik" back at
+   the front of --font-body. */
 
 /* ============================================================ TOKENS ==== */
 
@@ -79,8 +62,8 @@
   --grey: #757575;
 
   --font-display: "Nyght", var(--font-display-fallback), Georgia, serif;
-  --font-body: "Aeonik", var(--font-body-fallback), "Helvetica Neue",
-    Helvetica, Arial, sans-serif;
+  --font-body: var(--font-body-fallback), "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
 }
 
 html {

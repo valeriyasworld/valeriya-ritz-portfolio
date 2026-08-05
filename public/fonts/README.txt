@@ -1,15 +1,7 @@
-FONTS — drop your files here with exactly these names:
+FONTS
 
-  NyghtSerif-Light.woff2
-  NyghtSerif-LightItalic.woff2
-  NyghtSerif-Medium.woff2
-  NyghtSerif-MediumItalic.woff2
-  Aeonik-Regular.woff2
-  Aeonik-Medium.woff2
-  Aeonik-Bold.woff2
+Nyght Serif — SIL Open Font License (frei, Lizenz liegt als LICENSE beim Font-Repo).
+Body-Font ist Inter Tight via Google Fonts (layout.tsx), keine lokalen Dateien noetig.
 
-If your files have different names or formats (.otf/.ttf), either rename
-them or adjust the @font-face block at the top of app/globals.css.
-
-Until the files exist, the site uses fallbacks (Instrument Serif + Inter
-Tight) automatically — nothing breaks.
+Aeonik wurde 2026-07 entfernt (keine Lizenz). Nach Kauf einer CoType-Weblizenz:
+Dateien hier ablegen und @font-face in app/globals.css reaktivieren.
