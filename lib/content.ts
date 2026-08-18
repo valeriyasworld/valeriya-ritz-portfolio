@@ -18,10 +18,9 @@ export function placeholder(seed: string, w = 1200, h = 800): string {
 /* ------------------------------------------------------------------ NAV -- */
 
 export const nav = [
-  { label: "Showreel", href: "#showreel" },
-  { label: "About me", href: "#about" },
-  { label: "Manifest", href: "#manifest" },
   { label: "Work", href: "#work" },
+  { label: "Manifest", href: "#manifest" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -42,20 +41,9 @@ export const showreel = {
 /* ---------------------------------------------------------------- INTRO -- */
 
 export const intro = {
-  /**
-   * One big Hero-style flowing statement. *asterisks* mark serif-italic
-   * words. [1] [2] [3] mark inline photo slots — each renders the matching
-   * entry from `inlineImages` as a small picture inside the text flow.
-   * Slots without an image are simply skipped.
-   */
+  // The single positioning statement. *asterisks* = serif-italic accent.
   statement:
-    "Hey, I'm Valeriya. [1] A media designer working across digital design, visual systems and *film,* [2] connected by one question: What should this make people *feel?* [3]",
-  // .mp4 entries render as tiny muted video loops inside the text
-  inlineImages: [
-    "/media/intro/intro-1.jpg",
-    "/media/intro/intro-2.mp4",
-    "/media/intro/intro-3.jpg",
-  ] as string[],
+    "Hey, I'm Valeriya. A media designer working across digital design, visual systems and *film,* connected by one question: What should this make people *feel?*",
 };
 
 /* -------------------------------------------------------------- CONTEXT -- */
@@ -105,12 +93,8 @@ export const about = {
       },
       dates: "oct 2023 – sep 2026",
       what: "Digital products, interaction design and visual systems — where making things turned into building systems.",
-      // >>> REPLACE ME: real DHBW memories, e.g. "/media/memories/dhbw-1.jpg"
-      memories: [
-        placeholder("dhbw-1", 600, 800),
-        placeholder("dhbw-2", 600, 800),
-        placeholder("dhbw-3", 600, 800),
-      ],
+      // >>> drop real DHBW photos into /media/memories/ to enable the hover reel
+      memories: [] as string[],
     },
     {
       period: "1 year",
@@ -138,36 +122,13 @@ export const about = {
   ],
 };
 
-/* --------------------------------------------------------------- SKILLS -- */
-
-// Two marquees under About: hard skills glide left, soft skills glide
-// right at the same speed — direction tells them apart.
-export const skillsLabel = "( Soft & Hard Skills )";
-export const hardSkills = [
-  "Figma",
-  "DaVinci Resolve",
-  "Adobe Ai",
-  "Adobe Ps",
-  "Adobe InD",
-  "Adobe Pr",
-];
-export const softSkills = [
-  "Empathy & Self-Reflection",
-  "Curiosity",
-  "Intercultural Awareness",
-  "Problem-Solving",
-  "Accountability",
-];
-
 /* ------------------------------------------------------------- MANIFEST -- */
 
 // *asterisks* mark serif-italic words inside each statement.
 export const manifest = [
   "I don't want to make things look better. I want to make them *matter.*",
   "Strategy gives direction. Emotion gives it *meaning.*",
-  "I care about pixels. And about the *feeling* they leave behind.",
   "The best ideas begin with *questions.*",
-  "Create more. Consume *less.*",
 ];
 
 /* ----------------------------------------------------------------- WORK -- */

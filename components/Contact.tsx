@@ -8,13 +8,11 @@
  */
 
 import { contact } from "@/lib/content";
-import ImageTrail from "./ImageTrail";
 import { MaskReveal, Reveal } from "./ui";
 
 export default function Contact() {
   return (
     <section id="contact" className="bg-white px-5 pb-10 pt-32 md:px-10 md:pt-48">
-      <ImageTrail>
       {/* the sign */}
       <div className="text-center">
         {/* the two lines slide up out of an invisible mask, staggered */}
@@ -82,7 +80,6 @@ export default function Contact() {
           Impressum
         </a>
       </footer>
-      </ImageTrail>
     </section>
   );
 }

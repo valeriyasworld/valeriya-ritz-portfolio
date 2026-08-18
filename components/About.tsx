@@ -1,9 +1,8 @@
 "use client";
 
 /**
- * 03 — ABOUT ME (homepage)
- * Just one centered invitation right after the intro statement:
- * Experience & Education → /about (the full timeline lives there).
+ * 05 — ABOUT (homepage)
+ * A single line pointing to the full experience & education page.
  */
 
 import Link from "next/link";

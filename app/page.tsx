@@ -16,7 +16,6 @@ import Nav from "@/components/Nav";
 import Showreel from "@/components/Showreel";
 import Intro from "@/components/Intro";
 import About from "@/components/About";
-import Skills from "@/components/Skills";
 import Manifest from "@/components/Manifest";
 import Work from "@/components/Work";
 import Contact from "@/components/Contact";
@@ -27,10 +26,9 @@ export default function Home() {
       <Nav />
       <Showreel />
       <Intro />
-      <About />
-      <Skills />
-      <Manifest />
       <Work />
+      <Manifest />
+      <About />
       <Contact />
     </main>
   );
