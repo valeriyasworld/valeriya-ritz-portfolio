@@ -19,9 +19,40 @@ export function placeholder(seed: string, w = 1200, h = 800): string {
 
 export const nav = [
   { label: "Work", href: "#work" },
-  { label: "Manifest", href: "#manifest" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
+];
+
+/* ----------------------------------------------------------------- HERO -- */
+
+/**
+ * The manifesto, broken into draggable physics chips on the hero.
+ * `accent` = royal blue pill (the loud words), `size` scales the chip.
+ * Reorder or reword freely — the physics adapts to whatever is here.
+ */
+export const heroWords: { text: string; accent?: boolean; size?: "s" | "m" | "l" }[] = [
+  { text: "I", size: "s" },
+  { text: "DON'T", size: "m" },
+  { text: "WANT", size: "m" },
+  { text: "TO", size: "s" },
+  { text: "MAKE", size: "m" },
+  { text: "THINGS", size: "m" },
+  { text: "PRETTY", size: "m" },
+  { text: "I", size: "s" },
+  { text: "WANT", size: "m" },
+  { text: "TO", size: "s" },
+  { text: "MAKE", size: "m" },
+  { text: "THEM", size: "m" },
+  { text: "LOUD", accent: true, size: "l" },
+  { text: "WEIRD", accent: true, size: "l" },
+  { text: "EMOTIONAL", accent: true, size: "l" },
+  { text: "UNCOMFORTABLE", accent: true, size: "l" },
+  { text: "MEMORABLE", accent: true, size: "l" },
+  { text: "HUMAN", accent: true, size: "l" },
+  { text: "AND", size: "s" },
+  { text: "IMPOSSIBLE", accent: true, size: "l" },
+  { text: "TO", size: "s" },
+  { text: "IGNORE", accent: true, size: "l" },
 ];
 
 /* ---------------------------------------------------------------- INTRO -- */
@@ -107,15 +138,6 @@ export const about = {
     },
   ],
 };
-
-/* ------------------------------------------------------------- MANIFEST -- */
-
-// *asterisks* mark serif-italic words inside each statement.
-export const manifest = [
-  "I don't want to make things look better. I want to make them *matter.*",
-  "Strategy gives direction. Emotion gives it *meaning.*",
-  "The best ideas begin with *questions.*",
-];
 
 /* ----------------------------------------------------------------- WORK -- */
 

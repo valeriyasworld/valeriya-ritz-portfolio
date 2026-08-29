@@ -30,16 +30,14 @@ export default function Nav() {
 
   return (
     <>
-      <header className="pointer-events-none fixed inset-x-0 top-0 z-50 mix-blend-difference">
-        <nav className="flex items-center justify-between px-5 py-5 text-white md:px-10">
-          {/* handwritten signature logo — inverted (white strokes on black)
-              so the header's mix-blend-difference renders it correctly on
-              both the black showreel and the white sections */}
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
+        <nav className="flex items-center justify-between px-5 py-5 md:px-10">
+          {/* handwritten signature logo */}
           <a href="#top" className="pointer-events-auto">
             <img
               src="/media/logo.png"
               alt="Valeriya Ritz"
-              className="h-11 w-auto invert md:h-12"
+              className="h-11 w-auto md:h-12"
             />
           </a>
 
@@ -49,7 +47,7 @@ export default function Nav() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="micro link-line opacity-70 transition-opacity hover:opacity-100"
+                  className="micro link-line text-royal transition-opacity hover:opacity-70"
                 >
                   {item.label}
                 </a>
@@ -63,8 +61,8 @@ export default function Nav() {
             aria-label="Open menu"
             className="pointer-events-auto flex h-11 w-11 flex-col items-center justify-center gap-[7px] md:hidden"
           >
-            <span className="block h-px w-7 bg-white" />
-            <span className="block h-px w-7 bg-white" />
+            <span className="block h-px w-7 bg-royal" />
+            <span className="block h-px w-7 bg-royal" />
           </button>
         </nav>
       </header>

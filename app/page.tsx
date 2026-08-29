@@ -13,10 +13,9 @@
  */
 
 import Nav from "@/components/Nav";
-import Showreel from "@/components/Showreel";
+import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
 import About from "@/components/About";
-import Manifest from "@/components/Manifest";
 import Work from "@/components/Work";
 import Contact from "@/components/Contact";
 
@@ -24,10 +23,9 @@ export default function Home() {
   return (
     <main className="relative w-full">
       <Nav />
-      <Showreel />
+      <Hero />
       <Intro />
       <Work />
-      <Manifest />
       <About />
       <Contact />
     </main>
