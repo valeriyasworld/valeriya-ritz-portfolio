@@ -12,7 +12,7 @@ const config: Config = {
         white: "#FFFFFF",
         black: "#0A0A0A",
         grey: "#757575",
-        royal: "#2D3EFF",
+        royal: "#1200FF",
         line: "rgba(10,10,10,0.14)",
       },
       fontFamily: {

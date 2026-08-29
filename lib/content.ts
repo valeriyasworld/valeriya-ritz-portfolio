@@ -26,33 +26,14 @@ export const nav = [
 /* ----------------------------------------------------------------- HERO -- */
 
 /**
- * The manifesto, broken into draggable physics chips on the hero.
- * `accent` = royal blue pill (the loud words), `size` scales the chip.
- * Reorder or reword freely — the physics adapts to whatever is here.
+ * The manifesto, broken into draggable physics pills on the hero.
+ * Reorder or reword freely — the cluster adapts to whatever is here.
  */
-export const heroWords: { text: string; accent?: boolean; size?: "s" | "m" | "l" }[] = [
-  { text: "I", size: "s" },
-  { text: "DON'T", size: "m" },
-  { text: "WANT", size: "m" },
-  { text: "TO", size: "s" },
-  { text: "MAKE", size: "m" },
-  { text: "THINGS", size: "m" },
-  { text: "PRETTY", size: "m" },
-  { text: "I", size: "s" },
-  { text: "WANT", size: "m" },
-  { text: "TO", size: "s" },
-  { text: "MAKE", size: "m" },
-  { text: "THEM", size: "m" },
-  { text: "LOUD", accent: true, size: "l" },
-  { text: "WEIRD", accent: true, size: "l" },
-  { text: "EMOTIONAL", accent: true, size: "l" },
-  { text: "UNCOMFORTABLE", accent: true, size: "l" },
-  { text: "MEMORABLE", accent: true, size: "l" },
-  { text: "HUMAN", accent: true, size: "l" },
-  { text: "AND", size: "s" },
-  { text: "IMPOSSIBLE", accent: true, size: "l" },
-  { text: "TO", size: "s" },
-  { text: "IGNORE", accent: true, size: "l" },
+export const heroWords = [
+  "I", "DON'T", "WANT", "TO", "MAKE", "THINGS", "PRETTY",
+  "I", "WANT", "TO", "MAKE", "THEM",
+  "LOUD", "WEIRD", "EMOTIONAL", "UNCOMFORTABLE", "MEMORABLE", "HUMAN",
+  "AND", "IMPOSSIBLE", "TO", "IGNORE",
 ];
 
 /* ---------------------------------------------------------------- INTRO -- */
