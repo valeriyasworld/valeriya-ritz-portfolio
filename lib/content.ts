@@ -24,20 +24,6 @@ export const nav = [
   { label: "Contact", href: "#contact" },
 ];
 
-/* ------------------------------------------------------------- SHOWREEL -- */
-
-export const showreel = {
-  /**
-   * The real showreel. ✓ live
-   * (Optionally add a poster frame as /public/media/showreel-poster.jpg
-   * and set posterSrc to "/media/showreel-poster.jpg".)
-   */
-  videoSrc: "/media/showreel.mp4" as string | null,
-  posterSrc: null as string | null, // e.g. "/media/showreel-poster.jpg"
-  edition: "Portfolio 2026",
-  roleLine: "Digital design → creative direction & film",
-};
-
 /* ---------------------------------------------------------------- INTRO -- */
 
 export const intro = {

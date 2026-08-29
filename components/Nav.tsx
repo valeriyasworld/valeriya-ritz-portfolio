@@ -35,7 +35,7 @@ export default function Nav() {
           {/* handwritten signature logo — inverted (white strokes on black)
               so the header's mix-blend-difference renders it correctly on
               both the black showreel and the white sections */}
-          <a href="#showreel" className="pointer-events-auto">
+          <a href="#top" className="pointer-events-auto">
             <img
               src="/media/logo.png"
               alt="Valeriya Ritz"
