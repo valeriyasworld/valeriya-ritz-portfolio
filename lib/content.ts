@@ -274,42 +274,6 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "kerasilk",
-    title: "Kerasilk",
-    category: "Website Redesign / Digital Design",
-    year: "2024",
-    description:
-      "Website redesign focused on digital experience, structure and visual refinement.",
-    image: "/media/projects/kerasilk.png",
-    href: "/work/kerasilk",
-    detail: {
-      tagline: "STRUCTURE • REFINEMENT • FLOW",
-      caseVideo: null,
-      intro:
-        "A website redesign focused on digital experience, structure and visual refinement — bringing a premium haircare brand's digital presence up to the standard of its products.",
-      sections: [
-        {
-          heading: "The Status Quo",
-          body: "A strong brand with a website that undersold it: unclear structure, inconsistent visuals, friction where there should be flow.",
-          media: ["/media/projects/kerasilk.png"],
-        },
-        {
-          heading: "The Redesign",
-          body: "A clear information architecture, a calmer grid and typography that gives the products room to feel premium.",
-          layout: "asym",
-          media: ["ph", "ph"],
-        },
-        {
-          heading: "The Details",
-          body: "Micro-interactions, image treatment and spacing tuned until browsing feels as smooth as the brand promises.",
-          layout: "full",
-          media: ["ph"],
-        },
-      ],
-      team: ["Valeriya Ritz", "Elizaveta Berch"],
-    },
-  },
-  {
     id: "morphosis",
     title: "Morphosis",
     category: "Design Conception / Werkschau",
@@ -347,42 +311,6 @@ export const projects: Project[] = [
         },
       ],
       team: ["Valeriya Ritz", "Elizaveta Berch"],
-    },
-  },
-  {
-    id: "jardin",
-    title: "Jardin de la Crimée",
-    category: "Concept Website / Personal Project",
-    year: "2025",
-    description:
-      "A fictional website for a Crimean winery. A personal promise: if Crimea returns to Ukraine, I will design a real website for a winery there — for free.",
-    image: "/media/projects/jardin.jpg",
-    href: "/work/jardin",
-    detail: {
-      tagline: "WINE • MEMORY • PROMISE",
-      caseVideo: null,
-      intro:
-        "A fictional website for a Crimean winery — and a personal promise: if Crimea returns to Ukraine, I will design a real website for a winery there, for free.",
-      sections: [
-        {
-          heading: "The Promise",
-          body: "Some projects are briefs, this one is a vow. Jardin de la Crimee imagines the digital presence of a winery that exists in memory and in the future at once.",
-          media: ["/media/projects/jardin.jpg"],
-        },
-        {
-          heading: "The Concept",
-          body: "Elegance with an ache: golden type on darkness, tastings by invitation, a place described so precisely you can almost visit it.",
-          layout: "portrait-center",
-          media: ["ph"],
-        },
-        {
-          heading: "The Design",
-          body: "Editorial layouts, warm materials and restrained motion — luxury that behaves like patience.",
-          layout: "duo-landscape",
-          media: ["ph", "ph"],
-        },
-      ],
-      team: ["Valeriya Ritz"],
     },
   },
   {
